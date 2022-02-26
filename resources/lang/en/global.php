@@ -26,6 +26,7 @@ return [
         'table_text' => 'Through this feature, you can see the tables at the event, you can also see the people who have reserved a chair to sit at a particular table, and if the table is still vacant, you can also reserve a seat there. Enjoy sitting next to someone you share ideas with and laughing',
         'menu_description' => 'Here you can see all the items inside this menu, you can choose up to :count from this menu, notes: :notes ',
         'edit_warning' => 'Please be careful note that you cannot edit after submitting',
+        'needs_approved' => 'Your account has not approved from the admin, if you think this was an error, please contact with the admin or support team',
     ],
     'titles' => [
         'contributions_program' => 'JCI Damascus Software Contributions Program',
@@ -38,6 +39,7 @@ return [
     'buttons' => [
         'details' => 'See More Details',
         'login' => 'Click to login',
+        'register' => 'Click to register',
         'logout' => 'Click to logout',
         'menu' => 'Click here to see tables',
         'table' => 'Click here to see tables',
