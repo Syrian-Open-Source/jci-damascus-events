@@ -18,8 +18,8 @@ class CheckApprovedMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth::user()->approved) {
-            return view('auth.needs-approved');
+        if (!Auth::user()->is_approved) {
+            return redirect()->route('need_approved');
         }
         return $next($request);
     }

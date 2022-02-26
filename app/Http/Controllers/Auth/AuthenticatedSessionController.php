@@ -53,4 +53,14 @@ class AuthenticatedSessionController extends Controller
 
         return redirect('/');
     }
+    /**
+     * Destroy an authenticated session.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function needApproved(Request $request)
+    {
+        return view('auth.needs-approved');
+    }
 }
