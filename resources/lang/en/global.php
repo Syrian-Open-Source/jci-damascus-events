@@ -41,7 +41,7 @@ return [
         'login' => 'Click to login',
         'register' => 'Click to register',
         'logout' => 'Click to logout',
-        'menu' => 'Click here to see tables',
+        'menu' => 'Click here to see menus',
         'table' => 'Click here to see tables',
         'show_menu_items' => 'Click To Show menu',
         'save' => 'Save',

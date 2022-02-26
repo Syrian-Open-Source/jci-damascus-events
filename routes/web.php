@@ -25,7 +25,7 @@ Route::group(['middleware' => ['auth', 'verified', 'approved']], function () {
     Route::get('/events/{event}/tables', [TableController::class, 'show'])->name('tables.show');
     Route::get('/events/{event}/menus', [MenuController::class, 'show'])->name('menu.show');
     Route::post('/menu/{menu}/save-items', [MenuController::class, 'save'])->name('menus.save_user_items');
-
+    Route::post('/table/{foodTable}/register', [TableController::class, 'registerInTable'])->name('table.register_in_table');
 });
 
 Route::get('/dashboard', function () {

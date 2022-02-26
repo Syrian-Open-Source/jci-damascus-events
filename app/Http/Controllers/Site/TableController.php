@@ -4,13 +4,17 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\Models\Event;
+use App\Models\FoodTable;
+use App\Models\Menu;
+use App\Models\MenuItemMember;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TableController extends Controller
 {
 
     /**
-     * show all tables inside specific event.
+     * show all menus inside specific event.
      *
      * @param  \App\Models\Event  $event
      *
@@ -19,6 +23,20 @@ class TableController extends Controller
      */
     public function show(Event $event)
     {
-        return view('pages.tables.show' , ['data' => $event->load('foodTables')]);
+        return view('pages.tables.show', ['data' => $event->load('foodTables')->foodTables]);
+    }
+
+    /**
+     * show all menus inside specific event.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\FoodTable  $foodTable
+     *
+     * @return void
+     * @author karam mustafa
+     */
+    public function registerInTable(Request $request, FoodTable $foodTable)
+    {
+        dd($foodTable);
     }
 }
