@@ -45,6 +45,7 @@ return [
         'table' => 'Click here to see tables',
         'show_menu_items' => 'Click To Show menu',
         'save' => 'Save',
+        'home' => 'Home',
 
     ],
 
