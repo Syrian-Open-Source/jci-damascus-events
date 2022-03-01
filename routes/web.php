@@ -22,6 +22,7 @@ Route::get('/events', [EventController::class, 'index'])->name('events.index');
 Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
 Route::get('/events/{event}/tables', [TableController::class, 'show'])->name('tables.show');
 Route::get('/events/{event}/menus', [MenuController::class, 'show'])->name('menu.show');
+Route::post('/menu/{menu}/save-items', [MenuController::class, 'show'])->name('menus.save_user_items');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
