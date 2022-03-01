@@ -18,6 +18,6 @@ class MenuController extends Controller
      */
     public function show(Event $event)
     {
-        return view('pages.menus.show' , ['data' => $event->load('menus')->menus]);
+        return view('pages.menus.show' , ['data' => $event->load('menus' , 'menus.menuItems')->menus]);
     }
 }
