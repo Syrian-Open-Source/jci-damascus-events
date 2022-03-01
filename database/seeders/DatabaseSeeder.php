@@ -17,10 +17,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-        Event::factory()->count(5)->create();
-        FoodTable::factory()->count(5)->create();
-        Menu::factory()->count(5)->create();
-        MenuItem::factory()->count(5)->create();
+        \App\Models\User::factory()->create([
+            'name' => 'Karam Mustafa',
+            'email' => 'karam2mustafa@gmail.com',
+            'password' => '12345678',
+        ]);
+        $event = Event::factory()->create();
+        $data = ['event_id' => $event->id];
+        FoodTable::factory()->count(5)->create($data);
+        $menu = Menu::factory()->create($data);
+        MenuItem::factory()->count(5)->create([
+            'menu_id' => $menu->id,
+        ]);
     }
 }

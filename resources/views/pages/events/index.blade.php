@@ -15,5 +15,4 @@
             </div>
         </div>
     </div>
-    @include('components.contribution-section')
 @endsection

@@ -20,8 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/events', [EventController::class, 'index'])->name('events.index');
 Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
-Route::get('/tables/{event}', [TableController::class, 'show'])->name('tables.show');
-Route::get('/menu/{event}', [MenuController::class, 'show'])->name('menu.show');
+Route::get('/events/{event}/tables', [TableController::class, 'show'])->name('tables.show');
+Route::get('/events/{event}/menu', [MenuController::class, 'show'])->name('menu.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

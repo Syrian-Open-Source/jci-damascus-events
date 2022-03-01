@@ -1,1 +1,3 @@
-<?php
+@extends('layouts.main')
+
+

@@ -24,6 +24,7 @@
 <div class="main">
     @include('layouts.header')
     @yield('content')
+    @include('components.contribution-section')
     @include('layouts.footer')
 </div>
 
