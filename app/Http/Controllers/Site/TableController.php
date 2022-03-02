@@ -23,7 +23,9 @@ class TableController extends Controller
      */
     public function show(Event $event)
     {
-        return view('pages.tables.show', ['data' => $event->load('foodTables')->foodTables]);
+        $data = $event->load('foodTables','foodTables')->foodTables;
+        dd($data);
+        return view('pages.tables.show', ['data' => $data]);
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ChairTable;
 use App\Models\Event;
 use App\Models\FoodTable;
 use App\Models\Menu;
@@ -23,9 +24,20 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('12345678'),
         ]);
         $event = Event::factory()->create();
+
         $data = ['event_id' => $event->id];
-        FoodTable::factory()->count(5)->create($data);
+
+        for ($i=0; $i <= 5; $i++){
+            $table = FoodTable::factory()->create($data);
+
+            ChairTable::factory()->create([
+                'food_table_id' => $table->id,
+            ]);
+
+        }
+
         $menu = Menu::factory()->create($data);
+
         MenuItem::factory()->count(5)->create([
             'menu_id' => $menu->id,
         ]);

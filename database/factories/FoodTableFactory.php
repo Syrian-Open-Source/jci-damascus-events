@@ -25,7 +25,7 @@ class FoodTableFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(4),
-            'chairs_count' => $this->faker->numberBetween(-10000, 10000),
+            'chairs_count' => 5,
             'event_id' => Event::factory(),
         ];
     }

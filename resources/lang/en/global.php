@@ -46,6 +46,7 @@ return [
         'show_menu_items' => 'Click To Show menu',
         'save' => 'Save',
         'home' => 'Home',
+        'show_table_members' => 'see the member of this table',
 
     ],
 
