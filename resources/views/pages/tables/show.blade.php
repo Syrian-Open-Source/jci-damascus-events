@@ -46,7 +46,7 @@
                             </table>
                         </form>
                     </div>
-                    @if (!$isRegisteredBefore)
+                    @if (!$canRegister)
                         <div class="modal-footer">
                             <button form="form"
                                     class="btn btn-outline-primary btn-block">{{trans('global.buttons.register')}}</button>
@@ -67,31 +67,16 @@
                 $('.table-items-body').data('allowed', $(this).data('allowed'));
                 $('.table-items-body').empty();
                 $(this).data('tableItems').forEach((item, index) => {
-                    console.log(item)
                     let html = `
                     <tr>
-                      <th scope="row">${index}</th>
-                      <td>${item.title}</td>
+                      <th scope="row">${index + 1}</th>
+                      <td>${item.user.name}</td>
                     </tr>
                     `;
                     $('.table-items-body').append(html)
                 });
                 $('.table-items-modal').modal('show')
             });
-
-
-            $(document).on('change', '.table-item-input', function () {
-                let len = $('.table-item-input:checked').length;
-                $('.table-item-input').each((index, item) => {
-                    if (!item.checked && len == $('.table-items-body').data('allowed')) {
-                        item.disabled = true;
-                    } else {
-                        if (item.disabled) {
-                            item.disabled = false;
-                        }
-                    }
-                })
-            })
         </script>
     @endpush
 @endsection
