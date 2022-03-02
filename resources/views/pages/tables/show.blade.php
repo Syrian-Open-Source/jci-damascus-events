@@ -11,7 +11,7 @@
                             <h5 class="card-title">{{$item->title}}</h5>
                             <p class="card-text">{{$item->description}}</p>
                             <button type="button"
-                                    data-table-items="{{$item->foodTables}}"
+                                    data-table-items="{{$item->chairTable}}"
                                     data-url="{{route('table.register_in_table',$item->id)}}"
                                     class="btn btn-outline-primary table-button">
                                 {{trans('global.buttons.show_table_members')}}
@@ -46,13 +46,18 @@
                             </table>
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button form="form"
-                                class="btn btn-outline-primary btn-block">{{trans('global.buttons.save')}}</button>
-                    </div>
+                    @if (!$isRegisteredBefore)
+                        <div class="modal-footer">
+                            <button form="form"
+                                    class="btn btn-outline-primary btn-block">{{trans('global.buttons.register')}}</button>
+                        </div>
+                    @else
+                        <p>{{trans('global.registered_before')}}</p>
+                    @endif
                 </div>
             </div>
         </div>
+
     </div>
     @push('custom-scripts')
         <script>
@@ -62,11 +67,11 @@
                 $('.table-items-body').data('allowed', $(this).data('allowed'));
                 $('.table-items-body').empty();
                 $(this).data('tableItems').forEach((item, index) => {
+                    console.log(item)
                     let html = `
                     <tr>
                       <th scope="row">${index}</th>
                       <td>${item.title}</td>
-                      <td>${item.description}</td>
                     </tr>
                     `;
                     $('.table-items-body').append(html)

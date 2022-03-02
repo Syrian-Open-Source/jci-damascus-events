@@ -55,4 +55,6 @@ return [
     'title' => 'Title',
     'description' => 'Description',
     'choose' => 'Choose',
+    'name' => 'Name',
+    'registered_before' => 'You have already registered before',
 ];
