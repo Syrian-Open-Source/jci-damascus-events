@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         for ($i=0; $i <= 5; $i++){
             $table = FoodTable::factory()->create($data);
 
-            ChairTable::factory()->create([
+            ChairTable::factory()->count(5)->create([
                 'food_table_id' => $table->id,
             ]);
 
