@@ -41,9 +41,13 @@ return [
         'menu' => 'Click here to see tables',
         'table' => 'Click here to see tables',
         'show_menu_items' => 'Click To Show menu',
+        'save' => 'Save',
 
     ],
 
     'here' => 'Here',
     'or_register' => 'Or register',
+    'title' => 'Title',
+    'description' => 'Description',
+    'choose' => 'Choose',
 ];
