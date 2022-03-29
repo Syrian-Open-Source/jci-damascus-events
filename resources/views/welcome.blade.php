@@ -1,5 +1,5 @@
 @extends('layouts.main')
 
 @section('content')
-<h1 class="white-text">JCI Damascus Events</h1>
+<h1 class="text-white">JCI Damascus Events</h1>
 @endsection
