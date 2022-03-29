@@ -15,7 +15,7 @@
             font-family: 'Nunito', sans-serif;
         }
     </style>
-    <link rel="stylesheet" href="{{resource_path('/css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
 </head>
 <body class="antialiased">
 
