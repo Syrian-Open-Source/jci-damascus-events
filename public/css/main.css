@@ -1,3 +1,9 @@
+.whitesmoke{
+    background-color: whitesmoke;
+}
+
 .logo-center {
-    height: 200px;
+    height: 111px;
+    width: 200px;
+    margin: auto;
 }

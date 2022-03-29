@@ -17,7 +17,7 @@
     </style>
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
 </head>
-<body class="antialiased">
+<body class="antialiased whitesmoke">
 
 <div class="main">
     @yield('content')
