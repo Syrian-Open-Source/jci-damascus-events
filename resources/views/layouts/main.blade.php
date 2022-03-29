@@ -21,7 +21,9 @@
 <body class="antialiased whitesmoke">
 
 <div class="main">
+    @include('layouts.header')
     @yield('content')
+    @include('layouts.footer')
 </div>
 
 

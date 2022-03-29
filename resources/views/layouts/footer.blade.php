@@ -1,1 +1,1 @@
-<?php
+footer
