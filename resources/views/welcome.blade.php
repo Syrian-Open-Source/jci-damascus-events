@@ -9,4 +9,6 @@
         <h1> {{trans('global.titles.event_introduction')}} </h1>
         <p> {{trans('global.texts.event_introduction')}} </p>
     </div>
+
+    @component('components.event-cards')@endcomponent
 @endsection
