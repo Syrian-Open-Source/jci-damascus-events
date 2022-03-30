@@ -7,7 +7,7 @@
         <div class="col-md-4">
             @component('components.event-card-item')@endcomponent
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 mt-5">
             @component('components.event-card-item')@endcomponent
         </div>
     </div>
