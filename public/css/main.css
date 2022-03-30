@@ -10,6 +10,10 @@
     --main-blue-color-2: #d0e2ff;
 }
 
+a {
+    text-decoration: none;
+}
+
 .whitesmoke {
     background-color: #fefefe;
 }
@@ -23,11 +27,13 @@
 .events-area {
     background-color: var(--main-blue-color);
 }
-.event-card-item {
-
+.text-bold{
+    font-weight: bold !important;
 }
-.arrow-icon{
-    width: 50px;
+
+
+.arrow-icon {
+    width: 40px;
     height: 50px;
 }
 
