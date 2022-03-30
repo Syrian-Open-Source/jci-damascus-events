@@ -8,10 +8,13 @@ return [
          including food reservations, table reservations and seating.
          This system was developed by members of the technical team in JCI Damascus , in cooperation with the Syrian Open Source platform
          You Can Follow the project in github from
-         '
+         ',
+        'available_events_text' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
+
     ],
     'titles' => [
-        'event_introduction' => 'JCI Damascus Events System'
+        'event_introduction' => 'JCI Damascus Events System',
+        'available_events' => 'Available Events',
     ],
     'here' => 'Here',
 ];

@@ -1,4 +1,16 @@
-.whitesmoke{
+:root {
+    --main-bg-gray: #f4f5fa;
+    --main-bg-white: white;
+    --main-white-color: white;
+    --main-black-color: #516173;
+    --main-bg-gray-1: #d7d7d7;
+    --main-bg-gray-2: #515154;
+    --main-bg-gray-3: #a0a0a0;
+    --main-blue-color: #1f9bde;
+    --main-blue-color-2: #d0e2ff;
+}
+
+.whitesmoke {
     background-color: #fefefe;
 }
 
@@ -6,6 +18,10 @@
     height: 25%;
     width: 25%;
     margin: auto;
+}
+
+.events-area {
+    background-color: var(--main-blue-color);
 }
 
 @media (max-width: 992px) {
