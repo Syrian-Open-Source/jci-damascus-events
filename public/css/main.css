@@ -25,7 +25,8 @@ a {
 }
 
 .events-area {
-    background-color: var(--main-blue-color);
+    background: rgb(55,51,129);
+    background: linear-gradient(90deg, rgba(55,51,129,1) 0%, rgba(79,51,170,1) 24%, rgba(121,31,222,1) 66%, rgba(31,155,222,1) 100%);
 }
 .text-bold{
     font-weight: bold !important;
@@ -37,7 +38,7 @@ a {
     height: 50px;
 }
 .intro-p{
-    width: 75% !important;
+    width: 100% !important;
     text-align: initial;
 
 }
