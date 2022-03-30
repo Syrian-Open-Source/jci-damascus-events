@@ -17,7 +17,9 @@ a {
 .whitesmoke {
     background-color: #fefefe;
 }
-
+.event-introduction h1{
+    text-align: initial;
+}
 .logo-center {
     height: 25%;
     width: 25%;
@@ -41,27 +43,35 @@ a {
 
 .intro-p {
     width: 100% !important;
-    text-align: initial;
+    text-align: start;
 }
 
 .contribution-section {
-    max-height: 600px;
-    height: 600px;
+    height: max-content;
 }
 
 .contribution-section img {
-    height: 600px;
-    width: 600px;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
 }
-
+.bg-header{
+    margin: -100px 0;
+    z-index: 0;
+}
 @media (max-width: 992px) {
     .logo-center {
         height: 50%;
         width: 50%;
     }
-
-    .intro-p {
-        width: 75% !important;
+    .bg-header{
+        margin: -0px 0;
+        z-index: 0;
+    }
+    .contribution-section img {
+        height: 400px;
+        width: 400px;
+        border-radius: 50%;
     }
 }
 
