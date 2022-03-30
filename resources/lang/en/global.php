@@ -16,8 +16,10 @@ return [
         'event_introduction' => 'JCI Damascus Events System',
         'available_events' => 'Available Events',
     ],
+
     'buttons' => [
-      'details'  => 'See More Details'
+      'details'  => 'See More Details',
+      'login'  => 'Click to login',
     ],
 
     'here' => 'Here',

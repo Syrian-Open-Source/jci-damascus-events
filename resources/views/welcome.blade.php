@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <img class="w-100 bg-header" src="{{asset('/images/event-background.jpg')}}"/>
+    <img class="w-100 bg-header mb-3" src="{{asset('/images/event-background.jpg')}}"/>
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
@@ -17,7 +17,6 @@
             </div>
         </div>
     </div>
-
     @component('components.event-cards')@endcomponent
     @include('components.contribution-section')
 @endsection
