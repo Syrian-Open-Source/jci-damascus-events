@@ -10,4 +10,5 @@
     </div>
 
     @component('components.event-cards')@endcomponent
+    @include('components.contribution-section')
 @endsection
