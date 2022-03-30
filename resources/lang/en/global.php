@@ -11,7 +11,7 @@ return [
          '
     ],
     'titles' => [
-        'event_introduction' => 'JCI Damascus Event System'
+        'event_introduction' => 'JCI Damascus Events System'
     ],
     'here' => 'Here',
 ];
