@@ -49,7 +49,7 @@ class MenuController extends Controller
                 })
                 ->count() != 0;
         if ($registeredBefore) {
-            session()->flash('error', 'please specify at least one element to store it.');
+            session()->flash('error', 'you have already registered in this menu before, we are working to add a new feature that makes you able to edit your chooses.');
             return redirect()->back();
         }
 

@@ -61,6 +61,7 @@
                 $('.menu-form').attr('action', $(this).data('url'));
                 $('.modal-title').html($(this).data('title'));
                 $('.menu-items-body').data('allowed', $(this).data('allowed'));
+                $('.menu-items-body').empty();
                 $(this).data('menuItems').forEach((item, index) => {
                     let html = `
                     <tr>
