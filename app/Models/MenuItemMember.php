@@ -38,6 +38,6 @@ class MenuItemMember extends Model
 
     public function user()
     {
-        return $this->belongsTo(UserId::class);
+        return $this->belongsTo(User::class);
     }
 }

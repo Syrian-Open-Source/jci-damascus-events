@@ -49,7 +49,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-outline-primary btn-block">{{trans('global.buttons.save')}}</button>
+                        <button form="form" class="btn btn-outline-primary btn-block">{{trans('global.buttons.save')}}</button>
                     </div>
                 </div>
             </div>

@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Models\Menu;
+use App\Models\MenuItemMember;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MenuController extends Controller
 {
@@ -19,7 +21,7 @@ class MenuController extends Controller
      */
     public function show(Event $event)
     {
-        return view('pages.menus.show' , ['data' => $event->load('menus' , 'menus.menuItems')->menus]);
+        return view('pages.menus.show', ['data' => $event->load('menus', 'menus.menuItems')->menus]);
     }
 
     /**
@@ -33,8 +35,25 @@ class MenuController extends Controller
      */
     public function save(Request $request, Menu $event)
     {
-        dd($request->all());
 
-        return view('pages.menus.show' , ['data' => $event->load('menus' , 'menus.menuItems')->menus]);
+        $itemIds = $request->get('selected') ?? [];
+
+        if (!sizeof($itemIds)) {
+            session()->flash('error', 'please specify at least one element to store it.');
+            return redirect()->back();
+        }
+        $data = collect($itemIds)->map(function ($id){
+            $item = new \stdClass();
+            $item->user_id = Auth::user()->id;
+            $item->menu_item_id = $id;
+            return $item;
+        });
+
+        MenuItemMember::insert($data);
+
+        session()->flash('success', 'your chooses were add successfully');
+
+        return redirect()->back();
+
     }
 }
