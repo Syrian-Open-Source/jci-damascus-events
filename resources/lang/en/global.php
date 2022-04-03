@@ -25,6 +25,7 @@ return [
         'menu_text' => 'Through this feature, see the menu prepared for this event, you can choose the meals you like and choose even the allowed number of meals for the night, feel free to see the menu, it\'s simple and easy to choose',
         'table_text' => 'Through this feature, you can see the tables at the event, you can also see the people who have reserved a chair to sit at a particular table, and if the table is still vacant, you can also reserve a seat there. Enjoy sitting next to someone you share ideas with and laughing',
         'menu_description' => 'Here you can see all the items inside this menu, you can choose up to :count from this menu, notes: :notes ',
+        'edit_warning' => 'Please be careful note that you cannot edit after submitting',
     ],
     'titles' => [
         'contributions_program' => 'JCI Damascus Software Contributions Program',
