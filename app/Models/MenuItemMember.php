@@ -15,7 +15,6 @@ class MenuItemMember extends Model
      * @var array
      */
     protected $fillable = [
-        'title',
         'menu_item_id',
         'user_id',
     ];

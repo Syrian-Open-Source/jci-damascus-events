@@ -17,7 +17,6 @@ class CreateMenuItemMembersTable extends Migration
 
         Schema::create('menu_item_members', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
             $table->foreignId('menu_item_id')->constrained('menu_items');
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();

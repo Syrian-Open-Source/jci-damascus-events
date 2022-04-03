@@ -35,19 +35,19 @@ class MenuController extends Controller
      */
     public function save(Request $request, Menu $event)
     {
-
         $itemIds = $request->get('selected') ?? [];
 
         if (!sizeof($itemIds)) {
             session()->flash('error', 'please specify at least one element to store it.');
             return redirect()->back();
         }
+
         $data = collect($itemIds)->map(function ($id){
-            $item = new \stdClass();
-            $item->user_id = Auth::user()->id;
-            $item->menu_item_id = $id;
-            return $item;
-        });
+            return [
+                'user_id' => Auth::user()->id,
+                'menu_item_id' => $id,
+            ];
+        })->toArray();
 
         MenuItemMember::insert($data);
 
