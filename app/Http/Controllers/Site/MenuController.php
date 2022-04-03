@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Models\Menu;
+use App\Models\MenuItem;
 use App\Models\MenuItemMember;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,31 +30,32 @@ class MenuController extends Controller
      * show all menus inside specific event.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Menu  $event
+     * @param  \App\Models\Menu  $menu
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      * @author karam mustafa
      */
-    public function save(Request $request, Menu $event)
+    public function save(Request $request, Menu $menu)
     {
         $itemIds = $request->get('selected') ?? [];
-
         if (!sizeof($itemIds)) {
             session()->flash('error', 'please specify at least one element to store it.');
             return redirect()->back();
         }
 
-        $data = collect($itemIds)->map(function ($id){
-            return [
-                'user_id' => Auth::user()->id,
-                'menu_item_id' => $id,
-            ];
-        })->toArray();
+        $registeredBefore = MenuItemMember::where('user_id', Auth::user()->id)
+                ->whereHas('menuItem', function ($q) use($menu) {
+                    $q->where('menu_id', $menu->id);
+                })
+                ->count() != 0;
+        if ($registeredBefore) {
+            session()->flash('error', 'please specify at least one element to store it.');
+            return redirect()->back();
+        }
 
-        MenuItemMember::insert($data);
+        Auth::user()->menuItems()->attach($itemIds);
 
         session()->flash('success', 'your chooses were add successfully');
-
         return redirect()->back();
 
     }
