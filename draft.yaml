@@ -20,11 +20,13 @@ models:
   MenuItem:
     title: string
     description: text
-    menu_id: id foreign:events
-      relationships:
-        belongsTo: Menu
+    menu_id: id foreign:menus
+    relationships:
+      belongsTo: Menu
+      hasMany: MenuItemMember
+
   MenuItemMember:
     title: string
-    menu_item_id: id foreign:events
-      relationships:
-        belongsTo: MenuItem
+    menu_item_id: id foreign:menu_items
+    relationships:
+      belongsTo: MenuItem
