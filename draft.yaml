@@ -15,18 +15,17 @@ models:
     notes: text
     event_id: id foreign:events
     relationships:
-      belongsTo: Event
       hasMany: MenuItem
+
   MenuItem:
     title: string
     description: text
     menu_id: id foreign:menus
     relationships:
-      belongsTo: Menu
       hasMany: MenuItemMember
 
   MenuItemMember:
     title: string
     menu_item_id: id foreign:menu_items
-    relationships:
-      belongsTo: MenuItem
+    user_id: id foreign:user_id
+

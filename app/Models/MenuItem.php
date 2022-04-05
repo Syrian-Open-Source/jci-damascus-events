@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class MenuItem extends Model
 {
     use HasFactory;
 
@@ -17,10 +17,7 @@ class Event extends Model
     protected $fillable = [
         'title',
         'description',
-        'cover',
-        'start_date',
-        'end_date',
-        'is_active',
+        'menu_id',
     ];
 
     /**
@@ -30,13 +27,16 @@ class Event extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'start_date' => 'timestamp',
-        'end_date' => 'timestamp',
-        'is_active' => 'boolean',
+        'menu_id' => 'integer',
     ];
 
-    public function menus()
+    public function menuItemMembers()
     {
-        return $this->hasMany(Menu::class);
+        return $this->hasMany(MenuItemMember::class);
+    }
+
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class);
     }
 }
