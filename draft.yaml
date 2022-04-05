@@ -17,15 +17,12 @@ models:
     relationships:
       belongsTo: Event
       hasMany: MenuItem
-
   MenuItem:
     title: string
     description: text
     menu_id: id foreign:events
       relationships:
         belongsTo: Menu
-        hasMany: MenuItemMember
-
   MenuItemMember:
     title: string
     menu_item_id: id foreign:events
