@@ -33,3 +33,7 @@ models:
     title: string
     chairs_count: integer
 
+  ChairTable:
+    user_id: id foreign:users
+    food_table_id: id foreign:food_tables
+

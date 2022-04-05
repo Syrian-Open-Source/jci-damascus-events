@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MenuItemMember extends Model
+class FoodTable extends Model
 {
     use HasFactory;
 
@@ -16,8 +16,7 @@ class MenuItemMember extends Model
      */
     protected $fillable = [
         'title',
-        'menu_item_id',
-        'user_id',
+        'chairs_count',
     ];
 
     /**
@@ -27,17 +26,5 @@ class MenuItemMember extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'menu_item_id' => 'integer',
-        'user_id' => 'integer',
     ];
-
-    public function menuItem()
-    {
-        return $this->belongsTo(MenuItem::class);
-    }
-
-    public function user()
-    {
-        return $this->belongsTo(UserId::class);
-    }
 }
