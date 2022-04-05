@@ -6,3 +6,15 @@ models:
     start_date: timestamp
     end_date: timestamp
     is_active: boolean default:''
+    relationships:
+      hasMany: Menu
+
+  Menu:
+    title: string
+    max_plate: interger
+    notes: text
+    event_id: id foreign:events
+    relationships:
+      belongsTo: Event
+      hasMany: MenuItem
+
