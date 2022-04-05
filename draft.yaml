@@ -29,3 +29,7 @@ models:
     menu_item_id: id foreign:menu_items
     user_id: id foreign:user_id
 
+  FoodTable:
+    title: string
+    chairs_count: integer
+
