@@ -18,3 +18,10 @@ models:
       belongsTo: Event
       hasMany: MenuItem
 
+  MenuItem:
+    title: string
+    description: text
+    menu_id: id foreign:events
+      relationships:
+        belongsTo: Menu
+        hasMany: MenuItemMember
