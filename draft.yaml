@@ -25,3 +25,9 @@ models:
       relationships:
         belongsTo: Menu
         hasMany: MenuItemMember
+
+  MenuItemMember:
+    title: string
+    menu_item_id: id foreign:events
+      relationships:
+        belongsTo: MenuItem
