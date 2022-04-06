@@ -1,0 +1,39 @@
+models:
+  Event:
+    title: string
+    description: text
+    cover: string
+    start_date: timestamp
+    end_date: timestamp
+    is_active: boolean default:''
+    relationships:
+      hasMany: Menu
+
+  Menu:
+    title: string
+    max_plate: interger
+    notes: text
+    event_id: id foreign:events
+    relationships:
+      hasMany: MenuItem
+
+  MenuItem:
+    title: string
+    description: text
+    menu_id: id foreign:menus
+    relationships:
+      hasMany: MenuItemMember
+
+  MenuItemMember:
+    title: string
+    menu_item_id: id foreign:menu_items
+    user_id: id foreign:user_id
+
+  FoodTable:
+    title: string
+    chairs_count: integer
+
+  ChairTable:
+    user_id: id foreign:users
+    food_table_id: id foreign:food_tables
+
