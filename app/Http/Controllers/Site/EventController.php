@@ -12,11 +12,11 @@ class EventController extends Controller
 
     public function index()
     {
-        return view('pages.event', ['data' => Event::active()]);
+        return view('pages.events', ['data' => Event::active()]);
     }
 
     public function show(Event $event)
     {
-        return view('pages.event', ['data' => $event]);
+        return view('pages.events', ['data' => $event]);
     }
 }

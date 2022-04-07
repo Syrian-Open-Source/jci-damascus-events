@@ -9,8 +9,9 @@
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
         @auth()
-            <a href="#" class="text-bold"> <img class="arrow-icon"
-                                                src="{{asset('icons/arrow.png')}}"> {{trans('global.buttons.details')}}
+            <a href="{{route('events.show', 1)}}" class="text-bold">
+                <img class="arrow-icon" src="{{asset('icons/arrow.png')}}">
+                {{trans('global.buttons.details')}}
             </a>
         @endauth
     </div>
