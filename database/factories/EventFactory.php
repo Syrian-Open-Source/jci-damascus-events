@@ -28,7 +28,7 @@ class EventFactory extends Factory
             'cover' => $this->faker->word,
             'start_date' => $this->faker->dateTime(),
             'end_date' => $this->faker->dateTime(),
-            'is_active' => $this->faker->boolean,
+            'is_active' => true,
         ];
     }
 }

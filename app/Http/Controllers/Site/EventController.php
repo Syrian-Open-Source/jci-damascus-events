@@ -9,14 +9,13 @@ use Illuminate\Http\Request;
 class EventController extends Controller
 {
 
-
     public function index()
     {
-        return view('pages.events', ['data' => Event::active()]);
+        return view('pages.events.index', ['data' => Event::active()]);
     }
 
     public function show(Event $event)
     {
-        return view('pages.events', ['data' => $event]);
+        return view('pages.events.show', ['data' => $event]);
     }
 }
