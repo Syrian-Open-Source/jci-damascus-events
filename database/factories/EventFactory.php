@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Event;
@@ -26,8 +27,8 @@ class EventFactory extends Factory
             'title' => $this->faker->sentence(4),
             'description' => $this->faker->text,
             'cover' => $this->faker->word,
-            'start_date' => $this->faker->dateTime(),
-            'end_date' => $this->faker->dateTime(),
+            'start_date' => now(),
+            'end_date' => now(),
             'is_active' => true,
         ];
     }
