@@ -59,11 +59,6 @@ a {
     border-radius: 50%;
 }
 
-.bg-header {
-    margin: -100px 0;
-    z-index: 0;
-}
-
 .text-blue {
     color: var(--main-blue-color);
 }
@@ -102,7 +97,7 @@ a {
     }
 
     .bg-header {
-        margin: -0px 0;
+        margin: 30px 0;
         z-index: 0;
     }
 
