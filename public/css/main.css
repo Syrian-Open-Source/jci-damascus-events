@@ -1,5 +1,25 @@
-.whitesmoke{
+:root {
+    --main-bg-gray: #f4f5fa;
+    --main-bg-white: white;
+    --main-white-color: white;
+    --main-black-color: #516173;
+    --main-bg-gray-1: #d7d7d7;
+    --main-bg-gray-2: #515154;
+    --main-bg-gray-3: #a0a0a0;
+    --main-blue-color: #1f9bde;
+    --main-blue-color-2: #d0e2ff;
+}
+
+a {
+    text-decoration: none;
+}
+
+.whitesmoke {
     background-color: #fefefe;
+}
+
+.event-introduction h1 {
+    text-align: initial;
 }
 
 .logo-center {
@@ -8,10 +28,75 @@
     margin: auto;
 }
 
+.events-area {
+    background: rgb(55, 51, 129);
+    background: linear-gradient(90deg, rgba(55, 51, 129, 1) 0%, rgba(79, 51, 170, 1) 24%, rgba(121, 31, 222, 1) 66%, rgba(31, 155, 222, 1) 100%);
+}
+
+.text-bold {
+    font-weight: bold !important;
+}
+
+
+.arrow-icon {
+    width: 40px;
+    height: 50px;
+}
+
+.intro-p {
+    width: 100% !important;
+    text-align: start;
+}
+
+.contribution-section {
+    height: max-content;
+}
+
+.contribution-section img {
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+}
+
+.bg-header {
+    margin: -100px 0;
+    z-index: 0;
+}
+
+.text-blue {
+    color: var(--main-blue-color);
+}
+
+.footer .footer-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.footer {
+    margin-top: 50px;
+    width: 100%;
+    height: 200px;
+    background: rgb(133, 51, 170);
+    background: linear-gradient(90deg, rgba(133, 51, 170, 1) 29%, rgba(88, 106, 193, 1) 58%, rgba(71, 126, 201, 1) 75%, rgba(31, 175, 222, 1) 97%);
+    border-radius: 52% 48% 48% 52% / 100% 100% 0% 0%;
+    box-shadow: -10vmin 10vmin 0 rgb(255 255 255 / 7%);
+}
+
 @media (max-width: 992px) {
     .logo-center {
         height: 50%;
         width: 50%;
+    }
+
+    .bg-header {
+        margin: -0px 0;
+        z-index: 0;
+    }
+
+    .contribution-section img {
+        height: 400px;
+        width: 400px;
+        border-radius: 50%;
     }
 }
 
