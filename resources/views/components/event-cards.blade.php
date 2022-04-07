@@ -8,8 +8,10 @@
                    class="btn btn-light text-blue text-bold">{{trans('global.buttons.login')}}</a>
             @endauth
             @auth()
-                <a href="{{route('logout')}}"
-                   class="btn btn-light text-blue text-bold">{{trans('global.buttons.logout')}}</a>
+                <form action="{{route('logout')}}" method="POST">
+                    @csrf
+                    <button class="btn btn-light text-blue text-bold">{{trans('global.buttons.logout')}}</button>
+                </form>
             @endauth
         </div>
         <div class="col-md-4">

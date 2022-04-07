@@ -36,4 +36,5 @@ return [
     ],
 
     'here' => 'Here',
+    'or_register' => 'Or register',
 ];
