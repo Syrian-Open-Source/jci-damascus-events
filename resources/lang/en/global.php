@@ -9,7 +9,13 @@ return [
          This system was developed by members of the technical team in JCI Damascus , in cooperation with the Syrian Open Source platform
          You Can Follow the project in github from
          ',
+
         'available_events_text' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
+
+        'footer' => 'It seems that you have already reached the end of the page,
+         do not forget to thank the efforts of the volunteers and programmers who contribute to jci projects and syrian open source,
+          yes we do many updates with volunteer efforts, and in order to be able to reach our goals to wider communities and implement more development projects,
+         do not forget to follow us on social media Through the following links'
 
     ],
     'titles' => [

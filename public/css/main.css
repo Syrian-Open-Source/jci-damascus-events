@@ -8,6 +8,7 @@
     --main-bg-gray-3: #a0a0a0;
     --main-blue-color: #1f9bde;
     --main-blue-color-2: #d0e2ff;
+    --main-smoke-color: #fefefe;
 }
 
 a {
@@ -75,11 +76,23 @@ a {
 .footer {
     margin-top: 50px;
     width: 100%;
-    height: 200px;
+    padding: 20px;
+    height: max-content;
     background: rgb(133, 51, 170);
     background: linear-gradient(90deg, rgba(133, 51, 170, 1) 29%, rgba(88, 106, 193, 1) 58%, rgba(71, 126, 201, 1) 75%, rgba(31, 175, 222, 1) 97%);
     border-radius: 52% 48% 48% 52% / 100% 100% 0% 0%;
     box-shadow: -10vmin 10vmin 0 rgb(255 255 255 / 7%);
+}
+
+.footer .text {
+    width: 700px;
+    margin: auto;
+}
+
+.white-hr {
+    width: 60%;
+    margin: auto;
+    border: 2px solid var(--main-smoke-color);
 }
 
 @media (max-width: 992px) {
@@ -91,6 +104,15 @@ a {
     .bg-header {
         margin: -0px 0;
         z-index: 0;
+    }
+
+    .footer {
+        border-radius: initial;
+    }
+
+    .footer .text {
+        width: auto;
+        margin: auto;
     }
 
     .contribution-section img {
