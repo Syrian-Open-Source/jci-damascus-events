@@ -10,7 +10,11 @@ return [
          You Can Follow the project in github from
          ',
 
-        'available_events_text' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
+        'available_events_text' => "
+         The first step, you must have an account activated by an JCI damascus administration, on this system and you must be a member within JCI Damascus\n\n
+         This system is dedicated to providing technical solutions to members by facilitating some traditional operations\n\n
+         You can press the following button to log in and we will take you on a tour of the services within the system
+        ",
 
         'footer' => 'It seems that you have already reached the end of the page,
          do not forget to thank the efforts of the volunteers and programmers who contribute to jci projects and syrian open source,
@@ -26,8 +30,8 @@ return [
     ],
 
     'buttons' => [
-      'details'  => 'See More Details',
-      'login'  => 'Click to login',
+        'details' => 'See More Details',
+        'login' => 'Click to login',
     ],
 
     'here' => 'Here',
