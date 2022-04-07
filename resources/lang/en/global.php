@@ -32,6 +32,7 @@ return [
     'buttons' => [
         'details' => 'See More Details',
         'login' => 'Click to login',
+        'logout' => 'Click to logout',
     ],
 
     'here' => 'Here',
