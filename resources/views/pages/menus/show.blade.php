@@ -3,24 +3,28 @@
 
 @section('content')
     <div class="container ">
+        <div class="row">
         @foreach($data as $item)
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{asset('images/food-card.jpg')}}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">{{$item->title}}</h5>
-                    <p class="card-text">{{trans('global.texts.menu_description' , ['count'  => $item->max_plate , 'notes' => $item->notes])}}</p>
-                    <button type="button"
-                            data-menu-items="{{$item->menuItems}}"
-                            data-max="{{$item->menuItems}}"
-                            data-allowed="{{$item->max_plate}}"
-                            data-title="{{$item->title}}"
-                            data-url="{{route('menus.save_user_items',$item->id)}}"
-                            class="btn btn-outline-primary menu-button">
-                        {{trans('global.buttons.show_menu_items')}}
-                    </button>
-                </div>
-            </div>
+           <div class="col-md-4 com-sm-12">
+               <div class="card">
+                   <img class="card-img-top" src="{{asset('images/food-card.jpg')}}" alt="Card image cap">
+                   <div class="card-body">
+                       <h5 class="card-title">{{$item->title}}</h5>
+                       <p class="card-text">{{trans('global.texts.menu_description' , ['count'  => $item->max_plate , 'notes' => $item->notes])}}</p>
+                       <button type="button"
+                               data-menu-items="{{$item->menuItems}}"
+                               data-max="{{$item->menuItems}}"
+                               data-allowed="{{$item->max_plate}}"
+                               data-title="{{$item->title}}"
+                               data-url="{{route('menus.save_user_items',$item->id)}}"
+                               class="btn btn-outline-primary menu-button">
+                           {{trans('global.buttons.show_menu_items')}}
+                       </button>
+                   </div>
+               </div>
+           </div>
         @endforeach
+        </div>
         <div class="modal fade menu-items-modal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content container">

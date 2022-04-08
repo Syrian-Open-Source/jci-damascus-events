@@ -46,6 +46,7 @@ return [
         'show_menu_items' => 'Click To Show menu',
         'save' => 'Save',
         'home' => 'Home',
+        'show_table_members' => 'see the member of this table',
 
     ],
 
@@ -54,4 +55,7 @@ return [
     'title' => 'Title',
     'description' => 'Description',
     'choose' => 'Choose',
+    'name' => 'Name',
+    'table_capacity_exceeded' => 'Table capacity exceeded, You can not register on this table unfortunately.',
+    'registered_before' => 'You have already registered before',
 ];

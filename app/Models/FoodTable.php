@@ -33,4 +33,9 @@ class FoodTable extends Model
     {
         return $this->belongsTo(Event::class);
     }
+
+    public function chairTable()
+    {
+        return $this->hasMany(ChairTable::class);
+    }
 }

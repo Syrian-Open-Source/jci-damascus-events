@@ -32,6 +32,8 @@ models:
     title: string
     chairs_count: integer
     event_id: id foreign:events
+    relationships:
+      hasMany: ChairTable
 
   ChairTable:
     user_id: id foreign:users

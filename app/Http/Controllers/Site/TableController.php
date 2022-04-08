@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Models\ChairTable;
 use App\Models\Event;
 use App\Models\FoodTable;
 use App\Models\Menu;
@@ -23,7 +24,19 @@ class TableController extends Controller
      */
     public function show(Event $event)
     {
-        return view('pages.tables.show', ['data' => $event->load('foodTables')->foodTables]);
+        $data = $event->load('foodTables', 'foodTables.chairTable', 'foodTables.chairTable.user')->foodTables;
+
+        $isRegisteredBefore = ChairTable::where('user_id', Auth::user()->id)
+            ->whereHas('foodTable', function ($q) use ($event) {
+                $q->where('event_id', $event->id);
+            })->exists();
+
+        $canNotRegister = $isRegisteredBefore;
+
+        return view('pages.tables.show', [
+            'data' => $data,
+            'canNotRegister' => $canNotRegister,
+        ]);
     }
 
     /**
