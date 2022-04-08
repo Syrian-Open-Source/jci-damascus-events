@@ -22,14 +22,14 @@ return [
          do not forget to follow us on social media Through the following links',
 
         'contributions_program_text' => 'One of the goals is to participate in social responsibility by launching open source projects for free. This program aims to provide opportunities for programmers who contribute to help build projects, gain experience and get to know developers from all over the world.',
-        'food_menu_text' => 'Through this feature, see the menu prepared for this event, you can choose the meals you like and choose even the allowed number of meals for the night, feel free to see the menu, it\'s simple and easy to choose',
+        'menu_text' => 'Through this feature, see the menu prepared for this event, you can choose the meals you like and choose even the allowed number of meals for the night, feel free to see the menu, it\'s simple and easy to choose',
         'table_text' => 'Through this feature, you can see the tables at the event, you can also see the people who have reserved a chair to sit at a particular table, and if the table is still vacant, you can also reserve a seat there. Enjoy sitting next to someone you share ideas with and laughing',
     ],
     'titles' => [
         'contributions_program' => 'JCI Damascus Software Contributions Program',
         'event_introduction' => 'JCI Damascus Events System',
         'available_events' => 'Available Events',
-        'food_menu_text' => 'Reserve your food from menus',
+        'menu_text' => 'Reserve your food from menus',
         'table_text' => 'Reserve your chair at a table',
     ],
 
