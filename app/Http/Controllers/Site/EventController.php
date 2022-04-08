@@ -30,6 +30,6 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        return view('pages.events.show', ['data' => $event]);
+        return view('pages.events.show', ['event' => $event]);
     }
 }
