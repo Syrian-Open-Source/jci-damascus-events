@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Event;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\FoodTable;
@@ -25,6 +26,7 @@ class FoodTableFactory extends Factory
         return [
             'title' => $this->faker->sentence(4),
             'chairs_count' => $this->faker->numberBetween(-10000, 10000),
+            'event_id' => Event::factory(),
         ];
     }
 }

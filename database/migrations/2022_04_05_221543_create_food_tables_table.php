@@ -19,6 +19,7 @@ class CreateFoodTablesTable extends Migration
             $table->id();
             $table->string('title');
             $table->integer('chairs_count');
+            $table->foreignId('event_id')->constrained('events');
             $table->timestamps();
         });
 

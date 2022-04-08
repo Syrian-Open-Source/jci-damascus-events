@@ -17,6 +17,7 @@ class FoodTable extends Model
     protected $fillable = [
         'title',
         'chairs_count',
+        'event_id',
     ];
 
     /**
@@ -27,4 +28,9 @@ class FoodTable extends Model
     protected $casts = [
         'id' => 'integer',
     ];
+
+    public function event()
+    {
+        return $this->belongsTo(Event::class);
+    }
 }

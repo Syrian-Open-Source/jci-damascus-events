@@ -41,6 +41,8 @@ class ProjectInstall extends Command
         $this->info('Backpack package has installed successfully');
         system('php artisan vendor:publish --tag=blueprint-config');
         $this->info('blueprint package has installed successfully');
+        $this->info('php artisan db:seed');
+        $this->info('Database seeded successfully');
 
     }
 }
