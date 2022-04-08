@@ -56,5 +56,6 @@ return [
     'description' => 'Description',
     'choose' => 'Choose',
     'name' => 'Name',
+    'table_capacity_exceeded' => 'Table capacity exceeded, You can not register on this table unfortunately.',
     'registered_before' => 'You have already registered before',
 ];

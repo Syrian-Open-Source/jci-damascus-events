@@ -12,6 +12,7 @@
                             <p class="card-text">{{$item->description}}</p>
                             <button type="button"
                                     data-table-items="{{$item->chairTable}}"
+                                    data-table-capacity="{{$item->chairs_count}}"
                                     data-url="{{route('table.register_in_table',$item->id)}}"
                                     class="btn btn-outline-primary table-button">
                                 {{trans('global.buttons.show_table_members')}}
@@ -46,13 +47,13 @@
                             </table>
                         </form>
                     </div>
-                    @if (!$canRegister)
-                        <div class="modal-footer">
+                    @if (!$canNotRegister)
+                        <div class="modal-footer justify-content-center">
                             <button form="form"
                                     class="btn btn-outline-primary btn-block">{{trans('global.buttons.register')}}</button>
                         </div>
                     @else
-                        <p>{{trans('global.registered_before')}}</p>
+                        <p class="text-center font-weight-bold text-danger">{{trans('global.registered_before')}}</p>
                     @endif
                 </div>
             </div>
@@ -64,7 +65,6 @@
             $('.table-button').click(function () {
                 $('.table-form').attr('action', $(this).data('url'));
                 $('.modal-title').html($(this).data('title'));
-                $('.table-items-body').data('allowed', $(this).data('allowed'));
                 $('.table-items-body').empty();
                 $(this).data('tableItems').forEach((item, index) => {
                     let html = `
@@ -75,6 +75,9 @@
                     `;
                     $('.table-items-body').append(html)
                 });
+                if($(this).data('tableCapacity') == $(this).data('tableItems').length){
+                    $('.modal-footer').html("<p class='text-center font-weight-bold text-danger'>{{trans('global.table_capacity_exceeded')}}</p>")
+                }
                 $('.table-items-modal').modal('show')
             });
         </script>

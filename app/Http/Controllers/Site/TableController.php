@@ -24,16 +24,18 @@ class TableController extends Controller
      */
     public function show(Event $event)
     {
-        $data = $event->load('foodTables','foodTables.chairTable','foodTables.chairTable.user')->foodTables;
+        $data = $event->load('foodTables', 'foodTables.chairTable', 'foodTables.chairTable.user')->foodTables;
 
-        $canRegister = ChairTable::where('user_id', Auth::user()->id)
+        $isRegisteredBefore = ChairTable::where('user_id', Auth::user()->id)
             ->whereHas('foodTable', function ($q) use ($event) {
                 $q->where('event_id', $event->id);
             })->exists();
 
+        $canNotRegister = $isRegisteredBefore;
+
         return view('pages.tables.show', [
             'data' => $data,
-            'canRegister' => $canRegister,
+            'canNotRegister' => $canNotRegister,
         ]);
     }
 
