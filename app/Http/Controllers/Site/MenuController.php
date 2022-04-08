@@ -9,14 +9,15 @@ use Illuminate\Http\Request;
 class MenuController extends Controller
 {
     /**
-     * show resources
+     * show all menus inside specific event.
      *
      * @param  \App\Models\Event  $event
      *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      * @author karam mustafa
      */
     public function show(Event $event)
     {
-        dd($event);
+        return view('pages.menus.show' , ['data' => $event->load('menus')]);
     }
 }

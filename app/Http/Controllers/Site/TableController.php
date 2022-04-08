@@ -10,14 +10,15 @@ class TableController extends Controller
 {
 
     /**
-     * show resources
+     * show all tables inside specific event.
      *
      * @param  \App\Models\Event  $event
      *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      * @author karam mustafa
      */
     public function show(Event $event)
     {
-        dd($event);
+        return view('pages.tables.show' , ['data' => $event->load('foodTables')]);
     }
 }
