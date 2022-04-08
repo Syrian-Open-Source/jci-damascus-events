@@ -15,7 +15,6 @@ class MenuItemMember extends Model
      * @var array
      */
     protected $fillable = [
-        'title',
         'menu_item_id',
         'user_id',
     ];
@@ -36,8 +35,8 @@ class MenuItemMember extends Model
         return $this->belongsTo(MenuItem::class);
     }
 
-    public function user()
+    public function users()
     {
-        return $this->belongsTo(UserId::class);
+        return $this->belongsToMany(User::class, 'menu_item_members');
     }
 }

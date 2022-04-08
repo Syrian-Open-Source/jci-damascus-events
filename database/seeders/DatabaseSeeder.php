@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'name' => 'Karam Mustafa',
             'email' => 'karam2mustafa@gmail.com',
-            'password' => '12345678',
+            'password' => bcrypt('12345678'),
         ]);
         $event = Event::factory()->create();
         $data = ['event_id' => $event->id];

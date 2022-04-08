@@ -25,7 +25,6 @@ models:
       hasMany: MenuItemMember
 
   MenuItemMember:
-    title: string
     menu_item_id: id foreign:menu_items
     user_id: id foreign:user_id
 

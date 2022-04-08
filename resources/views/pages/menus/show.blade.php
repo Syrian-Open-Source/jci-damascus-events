@@ -11,66 +11,83 @@
                     <p class="card-text">{{trans('global.texts.menu_description' , ['count'  => $item->max_plate , 'notes' => $item->notes])}}</p>
                     <button type="button"
                             data-menu-items="{{$item->menuItems}}"
+                            data-max="{{$item->menuItems}}"
+                            data-allowed="{{$item->max_plate}}"
+                            data-title="{{$item->title}}"
                             data-url="{{route('menus.save_user_items',$item->id)}}"
-                            class="btn btn-primary menu-button">
+                            class="btn btn-outline-primary menu-button">
                         {{trans('global.buttons.show_menu_items')}}
                     </button>
                 </div>
             </div>
         @endforeach
-            <div class="modal fade menu-items-modal" tabindex="-1" role="dialog"
-                 aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <form class="menu-form" action="" method="POST">
+        <div class="modal fade menu-items-modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content container">
+                    <div class="modal-header">
+                        <h6 class="modal-title"></h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-danger">{{trans('global.texts.edit_warning')}}</p>
+                        <form class="menu-form p-2" id="form" action="" method="POST">
                             @csrf
                             <table class="table">
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">{{trans('global.title')}}</th>
+                                    <th scope="col">{{trans('global.description')}}</th>
                                     <th scope="col">{{trans('global.choose')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody class="menu-items-body">
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
                                 </tbody>
                             </table>
                         </form>
                     </div>
+                    <div class="modal-footer">
+                        <button form="form" class="btn btn-outline-primary btn-block">{{trans('global.buttons.save')}}</button>
+                    </div>
                 </div>
             </div>
+        </div>
     </div>
     @push('custom-scripts')
         <script>
             $('.menu-button').click(function () {
                 $('.menu-form').attr('action', $(this).data('url'));
-                $(this).data('menuItems').forEach((index, item) => {
+                $('.modal-title').html($(this).data('title'));
+                $('.menu-items-body').data('allowed', $(this).data('allowed'));
+                $('.menu-items-body').empty();
+                $(this).data('menuItems').forEach((item, index) => {
                     let html = `
+                    <tr>
                       <th scope="row">${index}</th>
                       <td>${item.title}</td>
-                      <td><input type="checkbox" name='selected[${index}]'></td>
+                      <td>${item.description}</td>
+                      <td><input class="menu-item-input" type="checkbox" name='selected[]' value="${item.id}"></td>
+                    </tr>
                     `;
                     $('.menu-items-body').append(html)
-                })
+                });
                 $('.menu-items-modal').modal('show')
+            });
+
+
+            $(document).on('change', '.menu-item-input', function () {
+                let len = $('.menu-item-input:checked').length;
+                $('.menu-item-input').each((index, item) => {
+                    if (!item.checked && len == $('.menu-items-body').data('allowed')) {
+                        item.disabled = true;
+                    } else {
+                        if (item.disabled) {
+                            item.disabled = false;
+                        }
+                    }
+                })
             })
         </script>
     @endpush
