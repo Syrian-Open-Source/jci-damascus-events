@@ -25,7 +25,7 @@ class FoodTableFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(4),
-            'chairs_count' => 5,
+            'chairs_count' => 7,
             'event_id' => Event::factory(),
         ];
     }

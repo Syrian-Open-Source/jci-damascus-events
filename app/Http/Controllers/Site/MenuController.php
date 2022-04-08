@@ -55,7 +55,7 @@ class MenuController extends Controller
 
         Auth::user()->menuItems()->attach($itemIds);
 
-        session()->flash('success', 'your chooses were add successfully');
+        session()->flash('success', 'your chooses have been added successfully');
         return redirect()->back();
 
     }

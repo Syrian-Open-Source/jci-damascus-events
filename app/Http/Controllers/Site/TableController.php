@@ -50,6 +50,11 @@ class TableController extends Controller
      */
     public function registerInTable(Request $request, FoodTable $foodTable)
     {
-        dd($foodTable);
+        ChairTable::where('food_table_id', $foodTable->id)->update([
+            'user_id' => Auth::user()->id,
+        ]);
+
+        session()->flash('success', 'your registration has been added successfully');
+        return redirect()->back();
     }
 }
