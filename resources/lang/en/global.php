@@ -24,6 +24,7 @@ return [
         'contributions_program_text' => 'One of the goals is to participate in social responsibility by launching open source projects for free. This program aims to provide opportunities for programmers who contribute to help build projects, gain experience and get to know developers from all over the world.',
         'menu_text' => 'Through this feature, see the menu prepared for this event, you can choose the meals you like and choose even the allowed number of meals for the night, feel free to see the menu, it\'s simple and easy to choose',
         'table_text' => 'Through this feature, you can see the tables at the event, you can also see the people who have reserved a chair to sit at a particular table, and if the table is still vacant, you can also reserve a seat there. Enjoy sitting next to someone you share ideas with and laughing',
+        'menu_description' => 'Here you can see all the items inside this menu, you can choose up to :count from this menu, notes: :notes ',
     ],
     'titles' => [
         'contributions_program' => 'JCI Damascus Software Contributions Program',
@@ -39,6 +40,7 @@ return [
         'logout' => 'Click to logout',
         'menu' => 'Click here to see tables',
         'table' => 'Click here to see tables',
+        'show_menu_items' => 'Click To Show menu',
 
     ],
 

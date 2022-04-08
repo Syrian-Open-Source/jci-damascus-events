@@ -25,7 +25,7 @@ class MenuFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(4),
-            'max_plate' => $this->faker->word,
+            'max_plate' => 3,
             'notes' => $this->faker->text,
             'event_id' => Event::factory(),
         ];

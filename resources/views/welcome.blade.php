@@ -19,5 +19,4 @@
     <img class="w-100 bg-header mb-3" src="{{asset('/images/event-background.jpg')}}"/>
 
     @component('components.event-cards' , ['data' => $data])@endcomponent
-    @include('components.contribution-section')
 @endsection
