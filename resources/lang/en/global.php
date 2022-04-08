@@ -21,18 +21,22 @@ return [
           yes we do many updates with volunteer efforts, and in order to be able to reach our goals to wider communities and implement more development projects,
          do not forget to follow us on social media Through the following links',
 
-        'contributions_program_text' => 'One of the goals is to participate in social responsibility by launching open source projects for free. This program aims to provide opportunities for programmers who contribute to help build projects, gain experience and get to know developers from all over the world.'
+        'contributions_program_text' => 'One of the goals is to participate in social responsibility by launching open source projects for free. This program aims to provide opportunities for programmers who contribute to help build projects, gain experience and get to know developers from all over the world.',
+        'food_menu_text' => 'One of the goals is to participate in social responsibility by launching open source projects for free. This program aims to provide opportunities for programmers who contribute to help build projects, gain experience and get to know developers from all over the world.',
     ],
     'titles' => [
         'contributions_program' => 'JCI Damascus Software Contributions Program',
         'event_introduction' => 'JCI Damascus Events System',
         'available_events' => 'Available Events',
+        'food_menu_text' => 'Available Events',
     ],
 
     'buttons' => [
         'details' => 'See More Details',
         'login' => 'Click to login',
         'logout' => 'Click to logout',
+        'menu' => 'Available Events',
+
     ],
 
     'here' => 'Here',
