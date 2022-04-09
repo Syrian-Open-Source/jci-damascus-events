@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class FoodTable extends Model
 {
+    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
 
     /**
@@ -32,5 +33,17 @@ class FoodTable extends Model
     public function event()
     {
         return $this->belongsTo(Event::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, "chair_tables");
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->whereHas('event', function ($q) {
+            $q->where('is_active', true);
+        })->get();
     }
 }

@@ -12,9 +12,14 @@ Route::group([
     'prefix'     => config('backpack.base.route_prefix', 'admin'),
     'middleware' => array_merge(
         (array) config('backpack.base.web_middleware', 'web'),
-        (array) config('backpack.base.middleware_key', 'admin')
+        (array) config('backpack.base.middleware_key', 'admin'),
+        ['isAdmin']
     ),
     'namespace'  => 'App\Http\Controllers\Admin',
 ], function () { // custom admin routes
     Route::crud('user', 'UserCrudController');
+    Route::crud('event', 'EventCrudController');
+    Route::crud('menu', 'MenuCrudController');
+    Route::crud('menu-item', 'MenuItemCrudController');
+    Route::crud('food-table', 'FoodTableCrudController');
 }); // this should be the absolute last line of this file

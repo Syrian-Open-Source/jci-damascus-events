@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
+    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
 
     /**
@@ -49,4 +50,17 @@ class Event extends Model
     {
         return $query->where('is_active', true)->get();
     }
+
+    public function chairs(){
+        return $this->hasManyThrough(ChairTable::class, FoodTable::class);
+    }
+
+    // public function setCoverAttribute($value)
+    // {
+    //     $attribute_name = "image";
+    //     $disk = "public";
+    //     $destination_path = "folder_1/subfolder_1";
+
+    //     $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
+    // }
 }
