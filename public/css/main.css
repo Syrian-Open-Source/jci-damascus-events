@@ -23,6 +23,11 @@ a {
     text-align: initial;
 }
 
+.flip {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
 .logo-center {
     height: 25%;
     width: 25%;
@@ -89,10 +94,12 @@ a {
     margin: auto;
     border: 2px solid var(--main-smoke-color);
 }
-.service-area .food-image{
+
+.service-area .food-image {
     max-height: 58%;
     max-width: 96%;
 }
+
 @media (max-width: 992px) {
     .logo-center {
         height: 50%;
@@ -112,10 +119,12 @@ a {
         width: auto;
         margin: auto;
     }
-    .service-area .food-image{
+
+    .service-area .food-image {
         max-height: 100%;
         max-width: 100%;
     }
+
     .contribution-section img {
         height: 400px;
         width: 400px;
