@@ -9,22 +9,21 @@ return [
          ',
 
         'available_events_text' => "
-         The first step, you must have an account activated by an JCI damascus administration, on this system and you must be a member within JCI Damascus\n\n
-         This system is dedicated to providing technical solutions to members by facilitating some traditional operations\n\n
-         You can press the following button to log in and we will take you on a tour of the services within the system
+       الخطوة الأولى يجب أن يكون لديك حساب في هذا النظام، تستطيع تسجيل حساب جديد ومن ثم سنقوم بإرسال بريد الكتروني لتأكيد الحساب، ثم سيقوم مدير النظام بالموافقة على حسابك وعندها تستطيع أن تستعرض خدمات كل فعالية.
+أو يمكنك تسجيل الدخول مباشرة اذاكنت تملك حساباً مقبولاً مسبقاً
         ",
 
-        'footer' => 'It seems that you have already reached the end of the page,
-         do not forget to thank the efforts of the volunteers and programmers who contribute to jci projects and syrian open source,
-          yes we do many updates with volunteer efforts, and in order to be able to reach our goals to wider communities and implement more development projects,
-         do not forget to follow us on social media Through the following links',
+        'footer' => 'يبدو أنك وصلت بالفعل إلى نهاية الصفحة ،
+          لا تنسوا شكر جهود المتطوعين والمبرمجين الذين يساهمون في مشاريع JCI و Syrian Open Source ،
+           نعم ، نقوم بالعديد من الميزات والمشاريع بجهود تطوعية ، ولكي نتمكن من الوصول إلى أهدافنا في مجتمعات أوسع وتنفيذ المزيد من المشاريع التنموية في المجتمع،
+       ندعوك لمتابعتنا على مواقع التواصل الاجتماعي من خلال الروابط التالية',
 
-        'contributions_program_text' => 'One of the goals is to participate in social responsibility by launching open source projects for free. This program aims to provide opportunities for programmers who contribute to help build projects, gain experience and get to know developers from all over the world.',
-        'menu_text' => 'Through this feature, see the menu prepared for this event, you can choose the meals you like and choose even the allowed number of meals for the night, feel free to see the menu, it\'s simple and easy to choose',
-        'table_text' => 'Through this feature, you can see the tables at the event, you can also see the people who have reserved a chair to sit at a particular table, and if the table is still vacant, you can also reserve a seat there. Enjoy sitting next to someone you share ideas with and laughing',
-        'menu_description' => 'Here you can see all the items inside this menu, you can choose up to :count from this menu, notes: :notes ',
-        'edit_warning' => 'Please be careful note that you cannot edit after submitting',
-        'needs_approved' => 'Your account has not approved from the admin, if you think this was an error, please contact with the admin or support team',
+        'contributions_program_text' => 'أحد الأهداف في الغرفة الفتية الدولية دمشق هو المشاركة في المسؤولية الاجتماعية من خلال إطلاق مشاريع مفتوحة المصدر مجانًا. يهدف هذا البرنامج إلى توفير الفرص للمبرمجين الذين يساهمون في المساعدة في بناء المشاريع واكتساب الخبرة والتعرف على مطورين من جميع أنحاء العالم.',
+        'menu_text' => 'من خلال هذه الميزة ، يمكنك الاطلاع على القائمة المعدة لهذا الحدث ، يمكنك اختيار الوجبات التي تفضلها واختيار حتى العدد المسموح به من وجبات الطعام في المساء ، ولا تتردد في رؤية القائمة ، فهي بسيطة وسهلة الاختيار',
+        'table_text' => 'من خلال هذه الميزة ، يمكنك مشاهدة الطاولات في الفعالية، كما يمكنك مشاهدة الأشخاص الذين حجزوا كرسيًا للجلوس على طاولة معينة ، وإذا كانت الطاولة لا تزال شاغرة ، يمكنك أيضًا حجز مقعد هناك. استمتع بالجلوس بجانب شخص تشارك معه الأفكار وتستمع بالجلوس الى جانبهس',
+        'menu_description' => 'هنا يمكنك أن ترى جميع المأكولات المتاحة داخل هذه القائمة، يمكنك اختيار فقط من العنااصر عدد يصل الى :count ',
+        'edit_warning' => 'رجاء كن حذراً أنه لا يمكنك التعديل بعد حفظ الأختيارات',
+        'needs_approved' => 'لم يتم قبول حسابك في النظام بعد، أذا كنت تعتقد أنه خطأ، يرجى مراسلة مدير النظام أو فريق الدعم',
     ],
     'titles' => [
         'contributions_program' => 'برنامج الغرفة الفتية الدولية دمشق للمشاركة في البرمجيات المفتوحة المصدر',
@@ -54,6 +53,7 @@ return [
     'description' => 'الوصف',
     'choose' => 'اختيار',
     'name' => 'الاسم',
+    'notes' => 'ملاحظات: ',
     'table_capacity_exceeded' => 'لا يمكنك التسجيل على هذه الطاول لانها وصلت الى الحد الاقصى من عمليات التسجيل',
     'registered_before' => 'لقد قمت بالفعل بالستجيل على طاولة، لا يمكنك التسجيل على طاولة أخرى.',
 ];

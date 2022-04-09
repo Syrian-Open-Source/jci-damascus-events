@@ -4,33 +4,37 @@
 @section('content')
     <div class="container ">
         <div class="row">
-        @foreach($data as $item)
-           <div class="col-md-4 com-sm-12">
-               <div class="card">
-                   <img class="card-img-top" src="{{asset('images/food-card.jpg')}}" alt="Card image cap">
-                   <div class="card-body">
-                       <h5 class="card-title">{{$item->title}}</h5>
-                       <p class="card-text">{{trans('global.texts.menu_description' , ['count'  => $item->max_plate , 'notes' => $item->notes])}}</p>
-                       <button type="button"
-                               data-menu-items="{{$item->menuItems}}"
-                               data-max="{{$item->menuItems}}"
-                               data-allowed="{{$item->max_plate}}"
-                               data-title="{{$item->title}}"
-                               data-url="{{route('menus.save_user_items',$item->id)}}"
-                               class="btn btn-outline-primary menu-button">
-                           {{trans('global.buttons.show_menu_items')}}
-                       </button>
-                   </div>
-               </div>
-           </div>
-        @endforeach
+            @foreach($data as $item)
+                <div class="col-md-4 com-sm-12">
+                    <div class="card">
+                        <img class="card-img-top" src="{{asset('images/food-card.jpg')}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$item->title}}</h5>
+                            <p class="card-text">{{trans('global.texts.menu_description' , ['count'  => $item->max_plate])}}</p>
+                            @if($item->notes != '')
+                                <br>
+                                <p>{{trans('global.notes')}} {{$item->notes}}</p>
+                            @endif
+                            <button type="button"
+                                    data-menu-items="{{$item->menuItems}}"
+                                    data-max="{{$item->menuItems}}"
+                                    data-allowed="{{$item->max_plate}}"
+                                    data-title="{{$item->title}}"
+                                    data-url="{{route('menus.save_user_items',$item->id)}}"
+                                    class="btn btn-outline-primary menu-button">
+                                {{trans('global.buttons.show_menu_items')}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
         <div class="modal fade menu-items-modal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content container">
                     <div class="modal-header">
                         <h6 class="modal-title"></h6>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="btn btn-outline-default" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -53,7 +57,8 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button form="form" class="btn btn-outline-primary btn-block">{{trans('global.buttons.save')}}</button>
+                        <button form="form"
+                                class="btn btn-outline-primary btn-block">{{trans('global.buttons.save')}}</button>
                     </div>
                 </div>
             </div>
