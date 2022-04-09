@@ -4,7 +4,7 @@
     <div class="container ">
         <div class="row">
             @foreach($data as $item)
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-4 col-sm-12 mb-3">
                     <div class="card">
                         <img class="card-img-top" src="{{asset('images/tables.webp')}}" alt="Card image cap">
                         <div class="card-body">
