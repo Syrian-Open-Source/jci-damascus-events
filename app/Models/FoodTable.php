@@ -46,4 +46,9 @@ class FoodTable extends Model
             $q->where('is_active', true);
         })->get();
     }
+    
+    public function chairTable()
+    {
+        return $this->hasMany(ChairTable::class);
+    }
 }
