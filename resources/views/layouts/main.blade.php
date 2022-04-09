@@ -4,8 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
-
+    <title>{{env('APP_NAME')}}</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta property="og:image" content="{{ asset('images/logo.png') }}" />
+    <meta property="og:site_name" content="{{env('APP_NAME')}}" />
+    <meta property="og:title" content="{{env('APP_NAME')}}" />
+    <meta property="og:url" content="{{env('APP_URL')}}" />
+    <meta property="og:type" content="website" />
+    <meta name="title" property="og:title" content="{{env('APP_NAME')}}" />
+    <meta property="og:description" content="{{trans('global.texts.site_description')}}"/>
+    <meta property="og:image:width" content="530">
+    <meta property="og:image:height" content="300">
+    <meta name="facebook:card" content="{{trans('global.texts.site_description')}}" />
+    <meta name="facebook:title" content="{{env('APP_NAME')}}" />
+    <meta name="facebook:image:src" content="{{ asset('images/logo.png') }}">
+    <meta name="facebook:domain" content="{{env('APP_URL')}}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}">
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     @if(isRtlDirection())
