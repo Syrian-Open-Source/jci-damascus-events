@@ -4,6 +4,7 @@ use App\Http\Controllers\Site\HomeController;
 use App\Http\Controllers\Site\EventController;
 use App\Http\Controllers\Site\TableController;
 use App\Http\Controllers\Site\MenuController;
+use App\Http\Controllers\Site\LangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/events', [EventController::class, 'index'])->name('events.index');
+Route::post('/events', [LangController::class, '__invoke'])->name('change_lang');
 
 Route::group(['middleware' => ['auth', 'verified', 'approved']], function () {
     Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
