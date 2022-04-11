@@ -26,12 +26,7 @@ class TableController extends Controller
     {
         $data = $event->load('foodTables', 'foodTables.chairTable', 'foodTables.chairTable.user')->foodTables;
 
-        $isRegisteredBefore = ChairTable::where('user_id', Auth::user()->id)
-            ->whereHas('foodTable', function ($q) use ($event) {
-                $q->where('event_id', $event->id);
-            })->exists();
-
-        $canNotRegister = $isRegisteredBefore;
+        $canNotRegister = $this->checkIfRegisteredBefore($event->id);
 
         return view('pages.tables.show', [
             'data' => $data,
@@ -50,11 +45,43 @@ class TableController extends Controller
      */
     public function registerInTable(Request $request, FoodTable $foodTable)
     {
-        ChairTable::where('food_table_id', $foodTable->id)->update([
+        $canNotRegister = $this->checkIfRegisteredBefore($foodTable->event_id);
+
+        if ($canNotRegister) {
+            session()->flash('error', 'you have registered in this event before');
+            return redirect()->back();
+        }
+
+        $chair = ChairTable::where('food_table_id', $foodTable->id)
+            ->whereNull('user_id')
+            ->first();
+
+        if (!$chair) {
+            session()->flash('error', 'this table does not have any available chair.');
+            return redirect()->back();
+        }
+
+        $chair->update([
             'user_id' => Auth::user()->id,
         ]);
 
         session()->flash('success', 'your registration has been added successfully');
         return redirect()->back();
+    }
+
+    /**
+     * check if the user was registered in an event before.
+     *
+     * @param  int  $eventId
+     *
+     * @return mixed
+     * @author karam mustafa
+     */
+    private function checkIfRegisteredBefore($eventId)
+    {
+        return ChairTable::where('user_id', Auth::user()->id)
+            ->whereHas('foodTable', function ($q) use ($eventId) {
+                $q->where('event_id', $eventId);
+            })->exists();
     }
 }

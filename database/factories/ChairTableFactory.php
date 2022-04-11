@@ -25,7 +25,7 @@ class ChairTableFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::factory(),
+            'user_id' =>null,
             'food_table_id' => FoodTable::factory(),
         ];
     }

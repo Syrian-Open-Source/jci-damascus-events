@@ -47,6 +47,7 @@ return [
         'save' => 'Save',
         'home' => 'Home',
         'show_table_members' => 'see the member of this table',
+        'received_chair' => 'Receive a chair',
 
     ],
 
@@ -58,4 +59,6 @@ return [
     'name' => 'Name',
     'table_capacity_exceeded' => 'Table capacity exceeded, You can not register on this table unfortunately.',
     'registered_before' => 'You have already registered before',
+    'table_chairs_count' => 'count of chairs',
+    'table_received_chairs' => 'count of received chairs',
 ];
