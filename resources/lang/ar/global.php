@@ -44,6 +44,7 @@ return [
         'save' => 'حفظ',
         'home' => 'الرئيسية',
         'show_table_members' => 'رؤية أعضاء هذه الطاول',
+        'received_chair' => 'حجز كرسي',
 
     ],
 
@@ -58,5 +59,4 @@ return [
     'registered_before' => 'لقد قمت بالفعل بالستجيل على طاولة، لا يمكنك التسجيل على طاولة أخرى.',
     'table_chairs_count' => 'عدد الكراسي الكلي',
     'table_received_chairs' => 'عدد الكراسي المحجوزة',
-    'received_chair' => 'حجز كرسي',
 ];

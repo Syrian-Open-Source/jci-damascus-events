@@ -17,7 +17,7 @@ class CreateChairTablesTable extends Migration
 
         Schema::create('chair_tables', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->nullable()->constrained('users');
             $table->foreignId('food_table_id')->constrained('food_tables');
             $table->timestamps();
         });
