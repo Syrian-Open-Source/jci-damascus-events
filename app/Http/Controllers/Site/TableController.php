@@ -51,11 +51,17 @@ class TableController extends Controller
             session()->flash('error', 'you have registered in this event before');
             return redirect()->back();
         }
-        dd(ChairTable::where('food_table_id', $foodTable->id)->count());
-        ChairTable::where('food_table_id', $foodTable->id)
+
+        $chair = ChairTable::where('food_table_id', $foodTable->id)
             ->whereNull('user_id')
-            ->first()
-            ->update([
+            ->first();
+
+        if (!$chair) {
+            session()->flash('error', 'this table does not have any available chair.');
+            return redirect()->back();
+        }
+
+        $chair->update([
             'user_id' => Auth::user()->id,
         ]);
 
