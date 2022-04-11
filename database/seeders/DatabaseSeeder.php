@@ -21,9 +21,12 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'name' => 'Karam Mustafa',
             'email' => 'karam2mustafa@gmail.com',
-            'password' => bcrypt('12345678'),
+            'password' => '12345678',
+            'role' => 'admin',
         ]);
-        $event = Event::factory()->create();
+        $event = Event::factory()->create([
+            'cover' => public_path('images/event-test.jpg')
+        ]);
 
         $data = ['event_id' => $event->id];
 
