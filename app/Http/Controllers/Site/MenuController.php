@@ -32,7 +32,7 @@ class MenuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Menu  $menu
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      * @author karam mustafa
      */
