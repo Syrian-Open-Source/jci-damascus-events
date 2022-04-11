@@ -9,7 +9,7 @@
                         <img class="card-img-top" src="{{asset('images/tables.webp')}}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{$item->title}}</h5>
-                            <p class="card-text">{{trans('global.table_chairs_count')}} {{$item->chairs_count}}</p>
+                            <p class="card-text">{{trans('global.table_chairs_count')}}: {{$item->chairs_count}}</p>
                             <p class="card-text">{{trans('global.table_received_chairs')}}: {{count($item->chairTable)}}</p>
                             <button type="button"
                                     data-table-items="{{$item->chairTable}}"
@@ -51,7 +51,7 @@
                     @if (!$canNotRegister)
                         <div class="modal-footer justify-content-center">
                             <button form="form"
-                                    class="btn btn-outline-primary btn-block">{{trans('global.buttons.register')}}</button>
+                                    class="btn btn-outline-primary btn-block">{{trans('global.buttons.received_chair')}}</button>
                         </div>
                     @else
                         <p class="text-center font-weight-bold text-danger">{{trans('global.registered_before')}}</p>
