@@ -26,7 +26,7 @@ class TableController extends Controller
     {
         $data = $event->load('foodTables', 'foodTables.chairTable', 'foodTables.chairTable.user')->foodTables;
 
-        $canNotRegister = $this->checkIfRegisteredBefore($event);
+        $canNotRegister = $this->checkIfRegisteredBefore($event->id);
 
         return view('pages.tables.show', [
             'data' => $data,
@@ -45,6 +45,12 @@ class TableController extends Controller
      */
     public function registerInTable(Request $request, FoodTable $foodTable)
     {
+        $canNotRegister = $this->checkIfRegisteredBefore($foodTable->event_id);
+
+        if ($canNotRegister) {
+            session()->flash('error', 'you have registered in this event before');
+            return redirect()->back();
+        }
         ChairTable::where('food_table_id', $foodTable->id)->update([
             'user_id' => Auth::user()->id,
         ]);
@@ -54,19 +60,18 @@ class TableController extends Controller
     }
 
     /**
-     * description
+     * check if the user was registered in an event before.
      *
-     * @param  \App\Models\Event  $event
+     * @param  int  $eventId
      *
      * @return mixed
      * @author karam mustafa
      */
-    private function checkIfRegisteredBefore(Event $event)
+    private function checkIfRegisteredBefore($eventId)
     {
-        $isRegisteredBefore = ChairTable::where('user_id', Auth::user()->id)
-            ->whereHas('foodTable', function ($q) use ($event) {
-                $q->where('event_id', $event->id);
+        return ChairTable::where('user_id', Auth::user()->id)
+            ->whereHas('foodTable', function ($q) use ($eventId) {
+                $q->where('event_id', $eventId);
             })->exists();
-        return $isRegisteredBefore;
-}
+    }
 }
