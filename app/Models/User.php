@@ -24,6 +24,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
         'is_approved',
         'role',
+        'email_verified_at',
     ];
 
     /**
@@ -42,14 +43,14 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'c' => 'datetime',
     ];
 
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = bcrypt($value);
     }
-    
+
     public function menuItems()
     {
         return $this->belongsToMany(MenuItemMember::class, 'menu_item_members', 'user_id', 'menu_item_id');
