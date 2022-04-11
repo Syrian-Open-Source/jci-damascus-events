@@ -43,7 +43,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<string, string>
      */
     protected $casts = [
-        'c' => 'datetime',
+        'email_verified_at' => 'datetime',
     ];
 
     public function setPasswordAttribute($value)
