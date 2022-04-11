@@ -19,7 +19,7 @@ class CreateEventsTable extends Migration
             $table->text('description');
             $table->string('cover');
             $table->timestamp('start_date');
-            $table->timestamp('end_date');
+            $table->timestamp('end_date')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->boolean('is_active')->default(false);
             $table->timestamps();
         });

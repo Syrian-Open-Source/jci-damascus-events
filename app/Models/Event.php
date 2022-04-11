@@ -103,13 +103,4 @@ class Event extends Model
         $public_destination_path = Str::replaceFirst('public/', 'storage/', $destination_path);
         $this->attributes['cover'] = $public_destination_path . '/' . $filename;
     }
-
-    // public function setCoverAttribute($value)
-    // {
-    //     $attribute_name = "image";
-    //     $disk = "public";
-    //     $destination_path = "folder_1/subfolder_1";
-
-    //     $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
-    // }
 }
