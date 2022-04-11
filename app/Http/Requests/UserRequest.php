@@ -30,6 +30,7 @@ class UserRequest extends FormRequest
             // 'password' => 'required|min:5|max:255',
             'is_approved' => 'required|boolean',
             'role' => 'required|in:admin,member',
+            'email_verified_at' => 'required|date',
         ];
     }
 
