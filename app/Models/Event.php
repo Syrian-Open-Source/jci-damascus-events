@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -34,10 +35,34 @@ class Event extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'start_date' => 'timestamp',
-        'end_date' => 'timestamp',
         'is_active' => 'boolean',
     ];
+
+    /**
+     * cast start date
+     *
+     * @param $val
+     *
+     * @return string
+     * @author karam mustafa
+     */
+    public function getStartDateAttribute($val)
+    {
+        return Carbon::parse($val)->toFormattedDateString();
+    }
+
+    /**
+     * cast end date
+     *
+     * @param $val
+     *
+     * @return string
+     * @author karam mustafa
+     */
+    public function getEndDateAttribute($val)
+    {
+        return Carbon::parse($val)->toFormattedDateString();
+    }
 
     public function menus()
     {
