@@ -26,12 +26,7 @@ class TableController extends Controller
     {
         $data = $event->load('foodTables', 'foodTables.chairTable', 'foodTables.chairTable.user')->foodTables;
 
-        $isRegisteredBefore = ChairTable::where('user_id', Auth::user()->id)
-            ->whereHas('foodTable', function ($q) use ($event) {
-                $q->where('event_id', $event->id);
-            })->exists();
-
-        $canNotRegister = $isRegisteredBefore;
+        $canNotRegister = $this->checkIfRegisteredBefore($event);
 
         return view('pages.tables.show', [
             'data' => $data,
@@ -57,4 +52,21 @@ class TableController extends Controller
         session()->flash('success', 'your registration has been added successfully');
         return redirect()->back();
     }
+
+    /**
+     * description
+     *
+     * @param  \App\Models\Event  $event
+     *
+     * @return mixed
+     * @author karam mustafa
+     */
+    private function checkIfRegisteredBefore(Event $event)
+    {
+        $isRegisteredBefore = ChairTable::where('user_id', Auth::user()->id)
+            ->whereHas('foodTable', function ($q) use ($event) {
+                $q->where('event_id', $event->id);
+            })->exists();
+        return $isRegisteredBefore;
+}
 }
