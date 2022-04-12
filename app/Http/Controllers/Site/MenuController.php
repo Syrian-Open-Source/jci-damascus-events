@@ -32,31 +32,60 @@ class MenuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Menu  $menu
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
      * @author karam mustafa
      */
     public function save(Request $request, Menu $menu)
     {
         $itemIds = $request->get('selected') ?? [];
-        if (!sizeof($itemIds)) {
-            session()->flash('error', 'please specify at least one element to store it.');
-            return redirect()->back();
-        }
 
-        $registeredBefore = MenuItemMember::where('user_id', Auth::user()->id)
-                ->whereHas('menuItem', function ($q) use($menu) {
-                    $q->where('menu_id', $menu->id);
-                })
-                ->count() != 0;
-        if ($registeredBefore) {
-            session()->flash('error', 'you have already registered in this menu before, we are working to add a new feature that makes you able to edit your chooses.');
-            return redirect()->back();
-        }
+        $this->checkIfEmpty($itemIds, '');
+
+        $this->checkIfRegisteredBeforeInMenu($menu);
 
         Auth::user()->menuItems()->attach($itemIds);
 
         session()->flash('success', 'your chooses have been added successfully');
+
         return redirect()->back();
 
+    }
+
+    /**
+     * description
+     *
+     * @param $menu
+     *
+     * @throws \Exception
+     * @author karam mustafa
+     */
+    private function checkIfRegisteredBeforeInMenu($menu)
+    {
+        $registeredBefore = MenuItemMember::where('user_id', Auth::user()->id)
+                ->whereHas('menuItem', function ($q) use ($menu) {
+                    $q->where('menu_id', $menu->id);
+                })
+                ->count() != 0;
+
+        if ($registeredBefore) {
+            throw new \Exception('you have already registered in this menu before, we are working to add a new feature that makes you able to edit your chooses.');
+        }
+    }
+
+    /**
+     * description
+     *
+     * @param  array  $items
+     * @param  string  $message
+     *
+     * @throws \Exception
+     * @author karam mustafa
+     */
+    private function checkIfEmpty(array $items, string $message)
+    {
+        if (!sizeof($items)) {
+            throw new \Exception($message);
+        }
     }
 }
