@@ -12,10 +12,10 @@
     <meta property="og:url" content="{{env('APP_URL')}}" />
     <meta property="og:type" content="website" />
     <meta name="title" property="og:title" content="{{env('APP_NAME')}}" />
-    <meta property="og:description" content="{{trans('global.texts.events_system_description')}}"/>
+    <meta property="og:description" content="{{trans('global.texts.event_introduction')}}"/>
     <meta property="og:image:width" content="530">
     <meta property="og:image:height" content="300">
-    <meta name="facebook:card" content="{{trans('global.texts.site_description')}}" />
+    <meta name="facebook:card" content="{{trans('global.texts.event_introduction')}}" />
     <meta name="facebook:title" content="{{env('APP_NAME')}}" />
     <meta name="facebook:image:src" content="{{ asset('images/logo.png') }}">
     <meta name="facebook:domain" content="{{env('APP_URL')}}">
