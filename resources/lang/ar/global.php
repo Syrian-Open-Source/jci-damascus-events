@@ -24,6 +24,8 @@ return [
         'menu_description' => 'هنا يمكنك أن ترى جميع المأكولات المتاحة داخل هذه القائمة، يمكنك اختيار فقط من العنااصر عدد يصل الى :count ',
         'edit_warning' => 'رجاء كن حذراً أنه لا يمكنك التعديل بعد حفظ الأختيارات',
         'needs_approved' => 'لم يتم قبول حسابك في النظام بعد، أذا كنت تعتقد أنه خطأ، يرجى مراسلة مدير النظام أو فريق الدعم',
+        'no_active_events' => 'How is that? We know that you have registered and confirmed your account and we promise that we will organize many great events soon and let you know about it',
+
     ],
     'titles' => [
         'contributions_program' => 'برنامج الغرفة الفتية الدولية دمشق للمشاركة في البرمجيات المفتوحة المصدر',
@@ -32,6 +34,8 @@ return [
         'available_events' => 'الفعاليات المتاحة',
         'menu_text' => 'حجز مأكولات من قائمة الطعام',
         'table_text' => 'حجز كرسي في طاولة',
+        'no_active_events' => 'لا يوجد أي فعاليات متاحة حالياً',
+
     ],
 
     'buttons' => [
