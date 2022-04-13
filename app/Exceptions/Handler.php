@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -39,7 +40,9 @@ class Handler extends ExceptionHandler
         });
 
         $this->renderable(function (Throwable $e) {
-            return redirect()->back()->with('error', $e->getMessage());
+            if (!$e instanceof ValidationException) {
+                return redirect()->back()->with('error', $e->getMessage());
+            }
         });
     }
 }
