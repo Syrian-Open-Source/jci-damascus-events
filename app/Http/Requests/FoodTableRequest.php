@@ -25,7 +25,7 @@ class FoodTableRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:5|max:255',
+            'title' => 'required|min:3|max:255',
             'chairs_count' => 'required|integer',
             'notes' => 'required|string',
             'event_id' => 'required|integer|exists:events,id',

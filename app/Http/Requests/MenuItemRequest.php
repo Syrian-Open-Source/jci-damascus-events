@@ -25,7 +25,7 @@ class MenuItemRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:5|max:255',
+            'title' => 'required|min:3|max:255',
             'description' => 'required|min:5|max:255',
             'menu_id' => 'required|integer|exists:menus,id',
         ];

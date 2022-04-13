@@ -25,7 +25,7 @@ class EventRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:5|max:255',
+            'title' => 'required|min:3|max:255',
             'description' => 'required',
             'is_active' => 'required|boolean',
             'start_date' => 'required|after_or_equal:created_at',
