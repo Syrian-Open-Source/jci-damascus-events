@@ -1,5 +1,5 @@
 <div class="card mb-3 event-card-item">
-    <img class="card-img-top" src="{{asset('images/event-test.jpg')}}" alt="Card image cap">
+    <img class="card-img-top" src="{{url($data->cover)}}" alt="Card image cap">
 
     <div class="card-body">
         <p class="card-text"><small class="text-muted">{{$data->start_date}} - {{$data->end_date}}</small></p>
