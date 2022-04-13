@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Route;
 // This route file is loaded automatically by Backpack\Base.
 // Routes you generate using Backpack\Generators will be placed here.
 
+Route::get('admin/register', function () {
+    return redirect('/admin/login');
+})->name('backpack.auth.register');
+
+
 Route::group([
     'prefix'     => config('backpack.base.route_prefix', 'admin'),
     'middleware' => array_merge(

@@ -12,7 +12,7 @@
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
         <a class="btn btn-outline-primary" href="/">
-            {{ trans('global.buttons.home') }} ?
+            {{ trans('global.buttons.home') }}
         </a>
     </x-auth-card>
 </x-guest-layout>
