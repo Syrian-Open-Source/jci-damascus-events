@@ -8,7 +8,7 @@
 
         <p class="card-text">{{$data->description}}</p>
         @auth()
-            <a href="{{route('events.show', 1)}}" class="text-bold">
+            <a href="{{route('events.show', $data->id)}}" class="text-bold">
                 <img class="arrow-icon {{isRtlDirection() ? 'flip' : ''}}" src="{{asset('icons/arrow.png')}}">
                 {{trans('global.buttons.details')}}
             </a>
