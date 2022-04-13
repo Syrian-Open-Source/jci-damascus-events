@@ -6,7 +6,7 @@
             <div class="col-md-6">
                 <div class="event-introduction text-center w-100">
                     <h1 class="font-weight-bold"> {{trans('global.titles.event_introduction')}} </h1>
-                    <p class="intro-p"> {{trans('global.texts.events_system_description')}} <a class="text-bold"
+                    <p class="intro-p"> {{trans('global.texts.event_introduction')}} <a class="text-bold"
                             href='https://github.com/Syrian-Open-Source/jci-damascus-events'>{{trans('global.here')}}</a>
                     </p>
                 </div>
