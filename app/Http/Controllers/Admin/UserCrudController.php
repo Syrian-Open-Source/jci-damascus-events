@@ -80,7 +80,7 @@ class UserCrudController extends CrudController
         ]);
         $this->crud->addField([
             'name' => 'phone',
-            'type' => 'numeric',
+            'type' => 'number',
             'label' => "Phone"
         ]);
         $this->crud->addField([
