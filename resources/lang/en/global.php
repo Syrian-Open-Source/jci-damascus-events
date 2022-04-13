@@ -64,4 +64,13 @@ return [
     'registered_before' => 'You have already registered before',
     'table_chairs_count' => 'count of chairs',
     'table_received_chairs' => 'count of received chairs',
+    'register' => 'Register',
+    'login' => 'Login',
+    'password' => 'Password',
+    'confirm_password' => 'Confirm Password',
+    'already_registered' => 'Already Registered ?',
+    'full_name' => 'Full Name',
+    'email' => 'Email',
+    'phone' => 'Phone',
+    'remember_me' => 'Remember Me',
 ];

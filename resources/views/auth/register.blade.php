@@ -51,14 +51,22 @@
                                 name="password_confirmation" required />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('global.already.registered') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('global.register') }}
-                </x-button>
+            <div class="flex items-center {{!isRtlDirection() ? 'justify-start' : ''}} mt-4">
+                @if(isRtlDirection())
+                    <x-button>
+                        {{ __('global.register') }}
+                    </x-button>
+                    <a class="underline mx-2 text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                        {{ __('global.already_registered') }}
+                    </a>
+                    @else
+                    <x-button >
+                        {{ __('global.register') }}
+                    </x-button>
+                    <a class="underline mx-2 text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                        {{ __('global.already_registered') }}
+                    </a>
+                @endif
             </div>
         </form>
     </x-auth-card>

@@ -43,14 +43,22 @@
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <a style="margin: 0 10px" href="{{route('register')}}">
-                    {{ trans('global.or_register') }} ?
-                </a>
-
-                <x-button class="mr-3">
-                    {{ __('global.login') }}
-                </x-button>
+            <div class="flex items-center {{!isRtlDirection() ? 'justify-start' : ''}} mt-4">
+                @if(isRtlDirection())
+                    <x-button class="mr-3">
+                        {{ __('global.login') }}
+                    </x-button>
+                    <a style="margin: 0 10px" href="{{route('register')}}">
+                        {{ trans('global.or_register') }} ?
+                    </a>
+                @else
+                    <x-button class="mr-3">
+                        {{ __('global.login') }}
+                    </x-button>
+                    <a style="margin: 0 10px" href="{{route('register')}}">
+                        {{ trans('global.or_register') }} ?
+                    </a>
+                @endif
             </div>
 
         </form>

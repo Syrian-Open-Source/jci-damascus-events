@@ -64,4 +64,14 @@ return [
     'registered_before' => 'لقد قمت بالفعل بالستجيل على طاولة، لا يمكنك التسجيل على طاولة أخرى.',
     'table_chairs_count' => 'عدد الكراسي الكلي',
     'table_received_chairs' => 'عدد الكراسي المحجوزة',
+    'register' => 'تسجيل حساب جديد',
+    'login' => 'تسجيل الدخول',
+    'password' => 'كلمة السر',
+    'confirm_password' => 'تأكيد كلمة السر',
+    'already_registered' => 'لديك حساب بالفعل ؟',
+    'full_name' => 'الاسم الكامل',
+    'email' => 'البريد الالكتروني',
+    'phone' => 'رقم الهاتف',
+    'remember_me' => 'تذكرني',
+
 ];
