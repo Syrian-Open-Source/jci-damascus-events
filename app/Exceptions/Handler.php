@@ -39,6 +39,7 @@ class Handler extends ExceptionHandler
         });
 
         $this->renderable(function (Throwable $e) {
+            dd($e);
             return redirect()->back()->with('error', $e->getMessage());
         });
     }
