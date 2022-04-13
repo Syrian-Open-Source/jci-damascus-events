@@ -27,6 +27,8 @@ return [
         'menu_description' => 'Here you can see all the items inside this menu, you can choose up to :count from this menu',
         'edit_warning' => 'Please be careful note that you cannot edit after submitting',
         'needs_approved' => 'Your account has not approved from the admin, if you think this was an error, please contact with the admin or support team',
+        'no_active_events' => 'How is that? We know that you have registered and confirmed your account and we promise that we will organize many great events soon and let you know about it',
+
     ],
     'titles' => [
         'contributions_program' => 'JCI Damascus Software Contributions Program',
@@ -34,6 +36,7 @@ return [
         'available_events' => 'Available Events',
         'menu_text' => 'Reserve your food from menus',
         'table_text' => 'Reserve your chair at a table',
+        'no_active_events' => 'There are no events currently available',
     ],
 
     'buttons' => [
