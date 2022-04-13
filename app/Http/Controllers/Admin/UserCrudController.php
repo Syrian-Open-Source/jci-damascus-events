@@ -41,6 +41,7 @@ class UserCrudController extends CrudController
     {
         CRUD::column('name');
         CRUD::column('email');
+        CRUD::column('phone');
         CRUD::column('role');
         CRUD::column('is_approved');
         CRUD::column('email_verified_at');
@@ -76,6 +77,11 @@ class UserCrudController extends CrudController
             'name' => 'email',
             'type' => 'email',
             'label' => "Email"
+        ]);
+        $this->crud->addField([
+            'name' => 'phone',
+            'type' => 'numeric',
+            'label' => "Phone"
         ]);
         $this->crud->addField([
             'name' => 'password',
