@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\MenuRequest;
 use App\Models\MenuItem;
+use App\Models\MenuItemMember;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -120,15 +121,15 @@ class MenuCrudController extends CrudController
     /**
      * check if any user has been registered on this menu before
      *
-     * @param int $menuId
+     * @param  int  $menuId
      *
      * @return bool
      * @author karam mustafa
      */
     private function checkIfUserRegisteredInMenu($menuId)
     {
-        $registered = MenuItem::where('menu_id', $menuId)->withCount('menuItemMembers')->get();
-        if (collect($registered)->where('menu_item_members_count', '!=', 0)->count()) {
+        $registered = MenuItemMember::where('menu_item_id', $menuId)->whereNotNull('user_id')->count();
+        if ($registered) {
             \Alert::error(trans('global.can_not_update_because_user_has_registered_before'))->flash();
             return true;
         }
