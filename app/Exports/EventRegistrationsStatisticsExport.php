@@ -37,6 +37,7 @@ class EventRegistrationsStatisticsExport implements FromCollection,WithHeadings,
                 if (!$chair->user) {
                     continue;
                 }
+                $result[$table->id]['table'] = $table->title;
                 $result[$table->id]['user'] = $chair->user->name ?? '';
                 $result[$table->id]['selected_food'] = $chair->user->menuItems->map(function ($item) {
                     return $item->title;
@@ -44,10 +45,9 @@ class EventRegistrationsStatisticsExport implements FromCollection,WithHeadings,
             }
 
             if (!sizeof($result[$table->id])) {
-                continue;
+                unset($result[$table->id]);
             }
 
-            $result[$table->id]['table'] = $table->title;
         }
 
         return collect($result);
@@ -61,8 +61,8 @@ class EventRegistrationsStatisticsExport implements FromCollection,WithHeadings,
     {
         return [
             'table',
-            'food',
             'user',
+            'food',
         ];
     }
 
