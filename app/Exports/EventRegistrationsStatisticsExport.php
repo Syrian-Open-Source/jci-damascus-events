@@ -23,7 +23,7 @@ class EventRegistrationsStatisticsExport implements FromCollection,WithHeadings,
     }
 
     /**
-     * @return \App\Models\Event
+     * @return \Illuminate\Support\Collection
      */
     public function collection()
     {
