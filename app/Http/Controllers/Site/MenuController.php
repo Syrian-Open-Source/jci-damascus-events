@@ -38,22 +38,20 @@ class MenuController extends Controller
      */
     public function save(Request $request, Menu $menu)
     {
-        $itemIds = $request->get('selected') ?? [];
-
-        $this->checkIfEmpty($itemIds, trans('global.at_least_one'));
+        $this->checkIfEmpty($request->get('selected') ?? [], trans('global.at_least_one'));
 
         $this->checkIfRegisteredBeforeInMenu($menu);
 
-        Auth::user()->menuItems()->attach($itemIds);
+        Auth::user()->menuItems()->attach($request->get('selected'));
 
-        session()->flash('success', 'your chooses have been added successfully');
+        session()->flash('success', trans('global.registration_success'));
 
         return redirect()->back();
 
     }
 
     /**
-     * description
+     * check if this user has registered in this menu before
      *
      * @param $menu
      *
@@ -69,12 +67,12 @@ class MenuController extends Controller
                 ->count() != 0;
 
         if ($registeredBefore) {
-            throw new \Exception('you have already registered in this menu before, we are working to add a new feature that makes you able to edit your chooses.');
+            throw new \Exception(trans('global.registered_before'));
         }
     }
 
     /**
-     * description
+     * check if any given items are empty
      *
      * @param  array  $items
      * @param  string  $message
