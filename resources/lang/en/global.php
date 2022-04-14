@@ -79,5 +79,6 @@ return [
     'tables' => 'The tables',
     'at_least_one' => 'Please select at least one item to save.',
     'selected_food_items' => 'Selected food items',
+    'can_not_update_because_user_has_registered_before' => 'Can not update, because there is a user has registered in this list before.',
 
 ];
