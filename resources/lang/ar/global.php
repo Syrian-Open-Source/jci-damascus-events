@@ -80,5 +80,6 @@ return [
     'at_least_one' => 'الرجاء اختيار عنصر واحد على الأقل ليتم حفظه.',
     'selected_food_items' => 'الطعام الذي تم اختياره',
     'can_not_update_because_user_has_registered_before' => 'لا يمكن التحديث لانه يوجد مستخدم قد سجل في هذه الفائمة من قبل.',
-
+    'chair_not_available' => 'لا يتوفر في هذه الطاولة أي كرسي حالياً',
+    'registration_success' => 'تم التسجيل بنجاح',
 ];
