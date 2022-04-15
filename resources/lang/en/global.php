@@ -51,6 +51,7 @@ return [
         'home' => 'Home',
         'show_table_members' => 'see the member of this table',
         'received_chair' => 'Receive a chair',
+        'show_registrations_statistics' => 'Show Registrations Statistics',
 
     ],
 
@@ -73,4 +74,6 @@ return [
     'email' => 'Email',
     'phone' => 'Phone',
     'remember_me' => 'Remember Me',
+    'tables' => 'The tables',
+
 ];
