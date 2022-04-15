@@ -46,6 +46,7 @@ class EventCrudController extends CrudController
         CRUD::column('start_date');
         CRUD::column('end_date');
         CRUD::column('is_active');
+        $this->crud->addButtonFromView('line', 'showRegisteredUsers', 'show_registrations_statistics_button', 'end');
 
 
         /**
@@ -131,5 +132,14 @@ class EventCrudController extends CrudController
             $event->foodTables()->delete();
             return $this->crud->delete($id);
         }
+    }
+
+    public function viewRegistrationsStatistics(Event $event){
+
+        $data = $event->load('foodTables', 'foodTables.chairTable', 'foodTables.chairTable.user')->foodTables;
+
+        return view('vendor.backpack.pages.table_regenerations_statistics', [
+            'data' => $data,
+        ]);
     }
 }

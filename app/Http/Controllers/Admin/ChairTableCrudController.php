@@ -71,24 +71,4 @@ class ChairTableCrudController extends CrudController
          * - CRUD::addField(['name' => 'price', 'type' => 'number']));
          */
     }
-
-    /**
-     * Define what happens when the Update operation is loaded.
-     *
-     * @see https://backpackforlaravel.com/docs/crud-operation-update
-     * @return void
-     */
-    protected function setupUpdateOperation()
-    {
-        $this->setupCreateOperation();
-    }
-
-    public function viewRegistrationsStatistics(Event $event){
-
-        $data = $event->load('foodTables', 'foodTables.chairTable', 'foodTables.chairTable.user')->foodTables;
-
-        return view('vendor.backpack.pages.table_regenerations_statistics', [
-            'data' => $data,
-        ]);
-    }
 }
