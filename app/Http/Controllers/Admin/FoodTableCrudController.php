@@ -47,6 +47,7 @@ class FoodTableCrudController extends CrudController
         CRUD::column('notes');
         CRUD::column('event_id');
         $this->crud->addClause('active');
+        $this->crud->addButtonFromView('line', 'showRegisteredUsers', 'show_registrations_statistics_button', 'end');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
