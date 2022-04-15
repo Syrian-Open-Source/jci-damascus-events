@@ -14,6 +14,5 @@
     <ul class="nav-dropdown-items">
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('food-table') }}'><i class='nav-icon la la-table'></i> Food tables</a></li>
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('chair-table') }}'><i class='nav-icon la la-question'></i> Chair tables</a></li>
-        <li class='nav-item'><a class='nav-link' href='{{ backpack_url('chair-table/view-registrations-statistics') }}'><i class='nav-icon la la-charging-station'></i> View Regenerations</a></li>
     </ul>
 </li>
