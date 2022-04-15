@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\ChairTableRequest;
+use App\Models\Event;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -82,10 +83,12 @@ class ChairTableCrudController extends CrudController
         $this->setupCreateOperation();
     }
 
-    public function viewRegistrationsStatistics(){
+    public function viewRegistrationsStatistics(Event $event){
 
-        $data = [];
+        $data = $event->load('foodTables', 'foodTables.chairTable', 'foodTables.chairTable.user')->foodTables;
 
-        return view('vendor.backpack.pages.table_regenerations_statistics', ['data' => $data]);
+        return view('vendor.backpack.pages.table_regenerations_statistics', [
+            'data' => $data,
+        ]);
     }
 }
