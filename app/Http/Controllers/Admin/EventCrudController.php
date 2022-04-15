@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\EventRegistrationsStatisticsExport;
 use App\Http\Requests\EventRequest;
 use App\Models\Event;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
+use Excel;
 
 /**
  * Class EventCrudController
@@ -47,6 +49,8 @@ class EventCrudController extends CrudController
         CRUD::column('end_date');
         CRUD::column('is_active');
         $this->crud->addButtonFromView('line', 'showRegisteredUsers', 'show_registrations_statistics_button', 'end');
+        $this->crud->addButtonFromView('line', 'exportRegisteredUsers', 'export_registrations_statistics_button',
+            'end');
 
 
         /**
@@ -134,19 +138,28 @@ class EventCrudController extends CrudController
         }
     }
 
+    public function exportRegistrationsStatistics(Event $event)
+    {
+        return Excel::download(new EventRegistrationsStatisticsExport($event), 'result.xlsx');
+    }
+
     public function viewRegistrationsStatistics(Event $event)
     {
-        $data = $event->load(
+
+        return view('vendor.backpack.pages.table_regenerations_statistics', [
+            'data' => $this->loadEventWithDependencies($event)->foodTables,
+        ]);
+    }
+
+    private function loadEventWithDependencies(Event $event)
+    {
+        return $event->load(
             [
                 'foodTables',
                 'foodTables.chairTable',
                 'foodTables.chairTable.user',
                 'foodTables.chairTable.user.menuItems',
             ]
-        )->foodTables;
-
-        return view('vendor.backpack.pages.table_regenerations_statistics', [
-            'data' => $data,
-        ]);
+        );
     }
 }
