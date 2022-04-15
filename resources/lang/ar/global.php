@@ -51,6 +51,8 @@ return [
         'show_table_members' => 'رؤية أعضاء هذه الطاولة',
         'received_chair' => 'حجز كرسي',
         'show_registrations_statistics' => 'رؤية احصائية التسجيلات',
+        'export_registrations_statistics' => 'تصدير احصائية التسجيلات',
+        'events' => 'الفعاليات',
 
     ],
 

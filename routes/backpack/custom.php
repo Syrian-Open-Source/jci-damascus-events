@@ -29,4 +29,5 @@ Route::group([
     Route::crud('food-table', 'FoodTableCrudController');
     Route::crud('chair-table', 'ChairTableCrudController');
     Route::get('event/{event}/view-registrations-statistics', 'EventCrudController@viewRegistrationsStatistics')->name('show_registrations_statistics');
+    Route::get('event/{event}/export-registrations-statistics', 'EventCrudController@exportRegistrationsStatistics')->name('export_registrations_statistics');
 }); // this should be the absolute last line of this file
