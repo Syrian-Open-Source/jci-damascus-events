@@ -73,4 +73,6 @@ return [
     'email' => 'Email',
     'phone' => 'Phone',
     'remember_me' => 'Remember Me',
+    'tables' => 'The tables',
+
 ];
