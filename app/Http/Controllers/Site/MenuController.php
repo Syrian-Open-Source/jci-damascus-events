@@ -40,7 +40,7 @@ class MenuController extends Controller
     {
         $itemIds = $request->get('selected') ?? [];
 
-        $this->checkIfEmpty($itemIds, '');
+        $this->checkIfEmpty($itemIds, trans('global.at_least_one'));
 
         $this->checkIfRegisteredBeforeInMenu($menu);
 
