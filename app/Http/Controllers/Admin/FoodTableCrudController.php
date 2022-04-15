@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\FoodTableRequest;
+use App\Models\ChairTable;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
+use Illuminate\Support\LazyCollection;
 use PDO;
 
 /**
@@ -102,7 +104,14 @@ class FoodTableCrudController extends CrudController
 
         // insert item in the db
         $item = $this->crud->create($this->crud->getStrippedSaveRequest());
+        $chairs = LazyCollection::times($item->chairs_count,function () use ($item) {
+            return [
+                'food_table_id' => $item->id,
+                'user_id' => null,
+            ];
+        })->toArray();
 
+        ChairTable::insert($chairs);
         $this->data['entry'] = $this->crud->entry = $item;
 
         // show a success message
