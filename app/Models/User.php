@@ -2,16 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\App;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
-    use HasApiTokens, HasFactory, Notifiable,\Illuminate\Auth\MustVerifyEmail;
+    use HasApiTokens, HasFactory, Notifiable, \Illuminate\Auth\MustVerifyEmail;
 
     /**
      * The attributes that are mass assignable.
@@ -55,5 +57,18 @@ class User extends Authenticatable implements MustVerifyEmail
     public function menuItems()
     {
         return $this->belongsToMany(MenuItemMember::class, 'menu_item_members', 'user_id', 'menu_item_id');
+    }
+
+    /**
+     * Send the email verification notification.
+     *
+     * @return void
+     */
+    public function sendEmailVerificationNotification()
+    {
+        if (App::environment('production')) {
+
+            $this->notify(new VerifyEmail);
+        }
     }
 }
