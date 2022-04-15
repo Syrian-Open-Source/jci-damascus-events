@@ -50,6 +50,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">{{trans('global.name')}}</th>
+                                <th scope="col">{{trans('global.selected_food_items')}}</th>
                             </tr>
                             </thead>
                             <tbody class="table-items-body">
@@ -66,10 +67,12 @@
             $('.table-items-body').empty();
             $(this).data('tableItems').forEach((item, index) => {
                 if (item.user) {
+                    let selectedMenuItems = getSelectedMenuItems(item.user.menu_items);
                     let html = `
                     <tr>
                       <th scope="row">${index + 1}</th>
                       <td>${item.user.name}</td>
+                      <td>${selectedMenuItems}</td>
                     </tr>
                     `;
                     $('.table-items-body').append(html)
@@ -77,5 +80,12 @@
             });
             $('.table-items-modal').modal('show')
         });
+
+        function getSelectedMenuItems(items)
+        {
+            return  items.map(function (item) {
+                return item.title;
+            }).join(', ');
+        }
     </script>
 @endsection
