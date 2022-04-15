@@ -24,7 +24,7 @@ return [
         'menu_description' => 'هنا يمكنك أن ترى جميع المأكولات المتاحة داخل هذه القائمة، يمكنك اختيار فقط من العنااصر عدد يصل الى :count ',
         'edit_warning' => 'رجاء كن حذراً أنه لا يمكنك التعديل بعد حفظ الأختيارات',
         'needs_approved' => 'لم يتم قبول حسابك في النظام بعد، أذا كنت تعتقد أنه خطأ، يرجى مراسلة مدير النظام أو فريق الدعم',
-        'no_active_events' => 'How is that? We know that you have registered and confirmed your account and we promise that we will organize many great events soon and let you know about it',
+        'no_active_events' => 'كيف هذا؟ نعلم أنك قمت بتسجيل حسابك وتأكيده ونعدك بأننا سننظم العديد من الأحداث الرائعة قريبًا ونعلمك بذلك',
 
     ],
     'titles' => [
@@ -75,5 +75,7 @@ return [
     'phone' => 'رقم الهاتف',
     'remember_me' => 'تذكرني',
     'tables' => 'الطاولات',
+    'at_least_one' => 'الرجاء اختيار عنصر واحد على الأقل ليتم حفظه.',
+    'selected_food_items' => 'الطعام الذي تم اختياره',
 
 ];

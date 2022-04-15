@@ -3,147 +3,89 @@
 @section('header')
     <div class="container-fluid">
         <h2>
-            <span class="text-capitalize">{!! $crud->getHeading() ?? $crud->entity_name_plural !!}</span>
-            <small id="datatable_info_stack">{!! $crud->getSubheading() ?? '' !!}</small>
+            <span class="text-capitalize">{{trans('global.tables')}}</span>
         </h2>
     </div>
 @endsection
 
 @section('content')
-    <!-- Default box -->
-    <div class="row">
-
-        <!-- THE ACTUAL CONTENT -->
-        <div class="{{ $crud->getListContentClass() }}">
-
-            <div class="row mb-0">
-                <div class="col-sm-6">
-                    @if ( $crud->buttons()->where('stack', 'top')->count() ||  $crud->exportButtons())
-                        <div class="d-print-none {{ $crud->hasAccess('create')?'with-border':'' }}">
-
-                            @include('crud::inc.button_stack', ['stack' => 'top'])
-
+    <div class="container">
+        <div class="row">
+            @foreach($data as $item)
+                <div class="col-md-4 col-sm-12 mb-3">
+                    <div class="card">
+                        <img class="card-img-top" src="{{asset('images/tables.webp')}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$item->title}}</h5>
+                            <p class="card-text">{{trans('global.table_chairs_count')}}: {{$item->chairs_count}}</p>
+                            <p class="card-text">{{trans('global.table_received_chairs')}}
+                                : {{collect($item->chairTable)->whereNotNull('user_id')->count()}}</p>
+                            <button type="button"
+                                    data-table-items="{{$item->chairTable}}"
+                                    class="btn btn-outline-primary table-button">
+                                {{trans('global.buttons.show_table_members')}}
+                            </button>
                         </div>
-                    @endif
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                    <div id="datatable_search_stack" class="mt-sm-0 mt-2 d-print-none"></div>
+            @endforeach
+        </div>
+    </div>
+@endsection
+@section('after_scripts')
+    <div class="modal fade table-items-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content container">
+                <div class="modal-header">
+                    <h6 class="modal-title"></h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="table-form p-2" id="form" action="" method="POST">
+                        @csrf
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">{{trans('global.name')}}</th>
+                                <th scope="col">{{trans('global.selected_food_items')}}</th>
+                            </tr>
+                            </thead>
+                            <tbody class="table-items-body">
+                            </tbody>
+                        </table>
+                    </form>
                 </div>
             </div>
-
-            {{-- Backpack List Filters --}}
-            @if ($crud->filtersEnabled())
-                @include('crud::inc.filters_navbar')
-            @endif
-
-            <table id="crudTable" class="bg-white table table-striped table-hover nowrap rounded shadow-xs border-xs mt-2" cellspacing="0">
-                <thead>
-                <tr>
-                    {{-- Table columns --}}
-                    @foreach ($crud->columns() as $column)
-                        <th
-                            data-orderable="{{ var_export($column['orderable'], true) }}"
-                            data-priority="{{ $column['priority'] }}"
-                            {{--
-
-                               data-visible-in-table => if developer forced field in table with 'visibleInTable => true'
-                               data-visible => regular visibility of the field
-                               data-can-be-visible-in-table => prevents the column to be loaded into the table (export-only)
-                               data-visible-in-modal => if column apears on responsive modal
-                               data-visible-in-export => if this field is exportable
-                               data-force-export => force export even if field are hidden
-
-                           --}}
-
-                            {{-- If it is an export field only, we are done. --}}
-                            @if(isset($column['exportOnlyField']) && $column['exportOnlyField'] === true)
-                            data-visible="false"
-                            data-visible-in-table="false"
-                            data-can-be-visible-in-table="false"
-                            data-visible-in-modal="false"
-                            data-visible-in-export="true"
-                            data-force-export="true"
-                            @else
-                            data-visible-in-table="{{var_export($column['visibleInTable'] ?? false)}}"
-                            data-visible="{{var_export($column['visibleInTable'] ?? true)}}"
-                            data-can-be-visible-in-table="true"
-                            data-visible-in-modal="{{var_export($column['visibleInModal'] ?? true)}}"
-                            @if(isset($column['visibleInExport']))
-                            @if($column['visibleInExport'] === false)
-                            data-visible-in-export="false"
-                            data-force-export="false"
-                            @else
-                            data-visible-in-export="true"
-                            data-force-export="true"
-                            @endif
-                            @else
-                            data-visible-in-export="true"
-                            data-force-export="false"
-                            @endif
-                            @endif
-                        >
-                            {!! $column['label'] !!}
-                        </th>
-                    @endforeach
-
-                    @if ( $crud->buttons()->where('stack', 'line')->count() )
-                        <th data-orderable="false"
-                            data-priority="{{ $crud->getActionsColumnPriority() }}"
-                            data-visible-in-export="false"
-                        >{{ trans('backpack::crud.actions') }}</th>
-                    @endif
-                </tr>
-                </thead>
-                <tbody>
-                </tbody>
-                <tfoot>
-                <tr>
-                    {{-- Table columns --}}
-                    @foreach ($crud->columns() as $column)
-                        <th>{!! $column['label'] !!}</th>
-                    @endforeach
-
-                    @if ( $crud->buttons()->where('stack', 'line')->count() )
-                        <th>{{ trans('backpack::crud.actions') }}</th>
-                    @endif
-                </tr>
-                </tfoot>
-            </table>
-
-            @if ( $crud->buttons()->where('stack', 'bottom')->count() )
-                <div id="bottom_buttons" class="d-print-none text-center text-sm-left">
-                    @include('crud::inc.button_stack', ['stack' => 'bottom'])
-
-                    <div id="datatable_button_stack" class="float-right text-right hidden-xs"></div>
-                </div>
-            @endif
-
         </div>
-
     </div>
+    <script>
+        $('.table-button').click(function () {
+            $('.modal-title').html($(this).data('title'));
+            $('.table-items-body').empty();
+            $(this).data('tableItems').forEach((item, index) => {
+                if (item.user) {
+                    let selectedMenuItems = getSelectedMenuItems(item.user.menu_items);
+                    let html = `
+                    <tr>
+                      <th scope="row">${index + 1}</th>
+                      <td>${item.user.name}</td>
+                      <td>${selectedMenuItems}</td>
+                    </tr>
+                    `;
+                    $('.table-items-body').append(html)
+                }
+            });
+            $('.table-items-modal').modal('show')
+        });
 
-@endsection
-
-@section('after_styles')
-    <!-- DATA TABLES -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('packages/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('packages/datatables.net-fixedheader-bs4/css/fixedHeader.bootstrap4.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('packages/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('packages/backpack/crud/css/crud.css').'?v='.config('backpack.base.cachebusting_string') }}">
-    <link rel="stylesheet" href="{{ asset('packages/backpack/crud/css/form.css').'?v='.config('backpack.base.cachebusting_string') }}">
-    <link rel="stylesheet" href="{{ asset('packages/backpack/crud/css/list.css').'?v='.config('backpack.base.cachebusting_string') }}">
-
-    <!-- CRUD LIST CONTENT - crud_list_styles stack -->
-    @stack('crud_list_styles')
-@endsection
-
-@section('after_scripts')
-    @include('crud::inc.datatables_logic')
-    <script src="{{ asset('packages/backpack/crud/js/crud.js').'?v='.config('backpack.base.cachebusting_string') }}"></script>
-    <script src="{{ asset('packages/backpack/crud/js/form.js').'?v='.config('backpack.base.cachebusting_string') }}"></script>
-    <script src="{{ asset('packages/backpack/crud/js/list.js').'?v='.config('backpack.base.cachebusting_string') }}"></script>
-
-    <!-- CRUD LIST CONTENT - crud_list_scripts stack -->
-    @stack('crud_list_scripts')
+        function getSelectedMenuItems(items)
+        {
+            return  items.map(function (item) {
+                return item.title;
+            }).join(', ');
+        }
+    </script>
 @endsection

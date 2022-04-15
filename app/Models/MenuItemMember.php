@@ -35,8 +35,8 @@ class MenuItemMember extends Model
         return $this->belongsTo(MenuItem::class);
     }
 
-    public function users()
+    public function user()
     {
-        return $this->belongsToMany(User::class, 'menu_item_members');
+        return $this->belongsTo(User::class);
     }
 }

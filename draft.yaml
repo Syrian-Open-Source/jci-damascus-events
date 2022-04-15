@@ -22,7 +22,7 @@ models:
     description: text
     menu_id: id foreign:menus
     relationships:
-      hasMany: MenuItemMember
+      belongsToMany: User
 
   MenuItemMember:
     menu_item_id: id foreign:menu_items

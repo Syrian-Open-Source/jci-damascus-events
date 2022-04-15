@@ -75,5 +75,7 @@ return [
     'phone' => 'Phone',
     'remember_me' => 'Remember Me',
     'tables' => 'The tables',
+    'at_least_one' => 'Please select at least one item to save.',
+    'selected_food_items' => 'Selected food items',
 
 ];

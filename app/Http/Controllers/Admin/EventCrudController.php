@@ -28,7 +28,7 @@ class EventCrudController extends CrudController
     public function setup()
     {
         CRUD::setModel(\App\Models\Event::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/event');
+        CRUD::setRoute(config('backpack.base.route_prefix').'/event');
         CRUD::setEntityNameStrings('event', 'events');
     }
 
@@ -46,6 +46,7 @@ class EventCrudController extends CrudController
         CRUD::column('start_date');
         CRUD::column('end_date');
         CRUD::column('is_active');
+        $this->crud->addButtonFromView('line', 'showRegisteredUsers', 'show_registrations_statistics_button', 'end');
 
 
         /**
@@ -92,12 +93,12 @@ class EventCrudController extends CrudController
         $this->crud->addField([
             'name' => 'start_date',
             'label' => "Start Date",
-            'type'  => 'date_picker',
+            'type' => 'date_picker',
         ]);
         $this->crud->addField([
             'name' => 'end_date',
             'label' => "End Date",
-            'type'  => 'date_picker',
+            'type' => 'date_picker',
         ]);
         $this->crud->addField([
             'name' => 'is_active',
@@ -126,10 +127,26 @@ class EventCrudController extends CrudController
     public function destroy($id)
     {
         $event = Event::find($id);
-        if ($event->chairs->count() == 0){
+        if ($event->chairs->count() == 0) {
             $event->menus()->delete();
             $event->foodTables()->delete();
             return $this->crud->delete($id);
         }
+    }
+
+    public function viewRegistrationsStatistics(Event $event)
+    {
+        $data = $event->load(
+            [
+                'foodTables',
+                'foodTables.chairTable',
+                'foodTables.chairTable.user',
+                'foodTables.chairTable.user.menuItems',
+            ]
+        )->foodTables;
+
+        return view('vendor.backpack.pages.table_regenerations_statistics', [
+            'data' => $data,
+        ]);
     }
 }
