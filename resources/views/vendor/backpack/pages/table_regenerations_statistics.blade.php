@@ -30,37 +30,36 @@
                 </div>
             @endforeach
         </div>
-        <div class="modal fade table-items-modal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content container">
-                    <div class="modal-header">
-                        <h6 class="modal-title"></h6>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="text-danger">{{trans('global.texts.edit_warning')}}</p>
-                        <form class="table-form p-2" id="form" action="" method="POST">
-                            @csrf
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">{{trans('global.name')}}</th>
-                                </tr>
-                                </thead>
-                                <tbody class="table-items-body">
-                                </tbody>
-                            </table>
-                        </form>
-                    </div>
+    </div>
+@endsection
+@section('after_scripts')
+    <div class="modal fade table-items-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content container">
+                <div class="modal-header">
+                    <h6 class="modal-title"></h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="table-form p-2" id="form" action="" method="POST">
+                        @csrf
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">{{trans('global.name')}}</th>
+                            </tr>
+                            </thead>
+                            <tbody class="table-items-body">
+                            </tbody>
+                        </table>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-@endsection
-@section('after_scripts')
     <script>
         $('.table-button').click(function () {
             $('.modal-title').html($(this).data('title'));
