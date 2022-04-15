@@ -48,7 +48,7 @@ return [
         'show_menu_items' => 'قائمة الطعام',
         'save' => 'حفظ',
         'home' => 'الرئيسية',
-        'show_table_members' => 'رؤية أعضاء هذه الطاول',
+        'show_table_members' => 'رؤية أعضاء هذه الطاولة',
         'received_chair' => 'حجز كرسي',
 
     ],
