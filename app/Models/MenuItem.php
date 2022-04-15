@@ -33,7 +33,7 @@ class MenuItem extends Model
 
     public function menuItemMembers()
     {
-        return $this->hasMany(MenuItemMember::class);
+        return $this->belongsToMany(User::class,'menu_item_members' , 'menu_item_id' , 'user_id');
     }
 
     public function menu()

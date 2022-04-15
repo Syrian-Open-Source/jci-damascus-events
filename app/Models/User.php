@@ -56,7 +56,12 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function menuItems()
     {
-        return $this->belongsToMany(MenuItemMember::class, 'menu_item_members', 'user_id', 'menu_item_id');
+        return $this->belongsToMany(MenuItem::class, 'menu_item_members', 'user_id', 'menu_item_id');
+    }
+
+    public function chair()
+    {
+        return $this->belongsTo(ChairTable::class);
     }
 
     /**

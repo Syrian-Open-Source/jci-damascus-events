@@ -30,13 +30,4 @@ class MenuItemMember extends Model
         'user_id' => 'integer',
     ];
 
-    public function menuItem()
-    {
-        return $this->belongsTo(MenuItem::class);
-    }
-
-    public function users()
-    {
-        return $this->belongsToMany(User::class, 'menu_item_members');
-    }
 }
