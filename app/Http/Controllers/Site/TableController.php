@@ -20,6 +20,7 @@ class TableController extends Controller
      * @param  \App\Models\Event  $event
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @throws \Exception
      * @author karam mustafa
      */
     public function show(Event $event)
@@ -40,32 +41,20 @@ class TableController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\FoodTable  $foodTable
      *
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
      * @author karam mustafa
      */
     public function registerInTable(Request $request, FoodTable $foodTable)
     {
-        $canNotRegister = $this->checkIfRegisteredBefore($foodTable->event_id);
+        $this->checkIfRegisteredBefore($foodTable->event_id);
 
-        if ($canNotRegister) {
-            session()->flash('error', 'you have registered in this event before');
-            return redirect()->back();
-        }
+        $chair = $this->checkIfFoodTableHasAvailableChair($foodTable);
 
-        $chair = ChairTable::where('food_table_id', $foodTable->id)
-            ->whereNull('user_id')
-            ->first();
+        $chair->update(['user_id' => Auth::user()->id]);
 
-        if (!$chair) {
-            session()->flash('error', 'this table does not have any available chair.');
-            return redirect()->back();
-        }
+        session()->flash('success', trans('global.registration_success'));
 
-        $chair->update([
-            'user_id' => Auth::user()->id,
-        ]);
-
-        session()->flash('success', 'your registration has been added successfully');
         return redirect()->back();
     }
 
@@ -75,13 +64,38 @@ class TableController extends Controller
      * @param  int  $eventId
      *
      * @return mixed
+     * @throws \Exception
      * @author karam mustafa
      */
     private function checkIfRegisteredBefore($eventId)
     {
-        return ChairTable::where('user_id', Auth::user()->id)
+        $registered = ChairTable::where('user_id', Auth::user()->id)
             ->whereHas('foodTable', function ($q) use ($eventId) {
                 $q->where('event_id', $eventId);
             })->exists();
+
+        if ($registered) throw new \Exception(trans('global.registered_before'));
+
+        return $registered;
+    }
+
+    /**
+     * check if the food table has an available chair or not, if not, we throw error
+     *
+     * @param  \App\Models\FoodTable  $foodTable
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
+     * @author karam mustafa
+     */
+    private function checkIfFoodTableHasAvailableChair(FoodTable $foodTable)
+    {
+        $chair = ChairTable::where('food_table_id', $foodTable->id)
+            ->whereNull('user_id')
+            ->first();
+
+        if (!$chair) throw new \Exception(trans('global.chair_not_available'));
+
+        return $chair;
     }
 }

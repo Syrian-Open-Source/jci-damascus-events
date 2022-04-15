@@ -80,5 +80,6 @@ return [
     'at_least_one' => 'Please select at least one item to save.',
     'selected_food_items' => 'Selected food items',
     'can_not_update_because_user_has_registered_before' => 'Can not update, because there is a user has registered in this list before.',
-
+    'chair_not_available' => 'This table does not has any available chair.',
+    'registration_success' => 'your registration has been added successfully',
 ];
