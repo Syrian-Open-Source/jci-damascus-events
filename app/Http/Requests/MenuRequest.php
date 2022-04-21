@@ -26,7 +26,7 @@ class MenuRequest extends FormRequest
     {
         return [
             'title' => 'required|min:3|max:255',
-            'notes' => 'required|string',
+            'notes' => 'sometimes|string',
             'max_plate' => 'nullable|integer',
             'event_id' => 'required|integer|exists:events,id',
         ];
