@@ -55,6 +55,7 @@ class MenuController extends Controller
      *
      * @param $menu
      *
+     * @return bool
      * @throws \Exception
      * @author karam mustafa
      */
@@ -69,6 +70,8 @@ class MenuController extends Controller
         if ($registeredBefore) {
             throw new \Exception(trans('global.registered_before'));
         }
+
+        return $registeredBefore;
     }
 
     /**

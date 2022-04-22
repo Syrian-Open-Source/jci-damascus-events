@@ -27,7 +27,7 @@ class TableController extends Controller
     {
         $data = $event->load('foodTables', 'foodTables.chairTable', 'foodTables.chairTable.user')->foodTables;
 
-        $canNotRegister = $this->checkIfRegisteredBefore($event->id);
+        $canNotRegister = $this->checkIfRegisteredBefore($event->id, false);
 
         return view('pages.tables.show', [
             'data' => $data,
@@ -63,18 +63,20 @@ class TableController extends Controller
      *
      * @param  int  $eventId
      *
+     * @param  bool  $throwError
+     *
      * @return mixed
      * @throws \Exception
      * @author karam mustafa
      */
-    private function checkIfRegisteredBefore($eventId)
+    private function checkIfRegisteredBefore($eventId, $throwError = true)
     {
         $registered = ChairTable::where('user_id', Auth::user()->id)
             ->whereHas('foodTable', function ($q) use ($eventId) {
                 $q->where('event_id', $eventId);
             })->exists();
 
-        if ($registered) throw new \Exception(trans('global.registered_before'));
+        if ($registered && $throwError) throw new \Exception(trans('global.registered_before'));
 
         return $registered;
     }
