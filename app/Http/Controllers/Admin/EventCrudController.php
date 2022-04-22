@@ -48,6 +48,7 @@ class EventCrudController extends CrudController
         CRUD::column('start_date');
         CRUD::column('end_date');
         CRUD::column('is_active');
+
         $this->crud->addButtonFromView('line', 'showRegisteredUsers', 'show_registrations_statistics_button', 'end');
         $this->crud->addButtonFromView('line', 'exportRegisteredUsers', 'export_registrations_statistics_button',
             'end');
@@ -84,7 +85,7 @@ class EventCrudController extends CrudController
         ]);
         $this->crud->addField([
             'name' => 'description',
-            'type' => 'text',
+            'type' => 'textarea',
             'label' => "Description"
         ]);
         $this->crud->addField([
