@@ -3,29 +3,26 @@
 
 return [
     'texts' => [
-        'event_introduction' => 'It is an JCI Damascus events management system.
-         The system displays the available events and then uses your personal information entered by the site administration to enter and interact with the activities related to each event,
-         including food reservations, table reservations and seating.
-         This system was developed by members of the technical team in JCI Damascus , in cooperation with the Syrian Open Source platform
-         You Can Follow the project in github from
+        'event_introduction' => 'This is an Event Management System for JCI Damascus.
+            This system was developed by JCI’s Tech Team in cooperation with the Syrian Open Source platform. You can create an account on the system, which will be activated after the system’s Administration approval, for you to be able to take part in the activities related to JCI Damascus events, including making reservations (food and seats..)
+            You can keep up with the project’s updates on Github through the following link:
          ',
 
         'available_events_text' => "
-         The first step, you must have an account activated by an JCI damascus administration, on this system and you must be a member within JCI Damascus\n\n
-         This system is dedicated to providing technical solutions to members by facilitating some traditional operations\n\n
-         You can press the following button to log in and we will take you on a tour of the services within the system
+        As a first step, you must create an account on the system. You will receive a confirmation email shortly after creating the account.
+        A system Administrator will approve your request, and you will be able to log into your account. If you already have a verified account, you can log into your account on the System directly.
         ",
 
-        'footer' => 'It seems that you have already reached the end of the page,
-         do not forget to thank the efforts of the volunteers and programmers who contribute to jci projects and syrian open source,
-          yes we do many updates with volunteer efforts, and in order to be able to reach our goals to wider communities and implement more development projects,
-         do not forget to follow us on social media Through the following links',
+        'footer' => 'It seems that you have already reached the end of the page.
+            Don’t forget to pay thanks to the efforts of our volunteers and  programmers who contribute to JCI and the Syrian Open Source platform projects.
+            We work voluntarily on several projects in order to reach our goals in achieving access to broader communities and implementing more development projects in our community.
+            We invite you to follow us on social media through the following links:
+        ',
 
-        'contributions_program_text' => 'One of the goals is to participate in social responsibility by launching open source projects for free. This program aims to provide opportunities for programmers who contribute to help build projects, gain experience and get to know developers from all over the world.',
-        'menu_text' => 'Through this feature, see the menu prepared for this event, you can choose the meals you like and choose even the allowed number of meals for the night, feel free to see the menu, it\'s simple and easy to choose',
-        'table_text' => 'Through this feature, you can see the tables at the event, you can also see the people who have reserved a chair to sit at a particular table, and if the table is still vacant, you can also reserve a seat there. Enjoy sitting next to someone you share ideas with and laughing',
-        'menu_description' => 'Here you can see all the items inside this menu, you can choose up to :count from this menu',
-        'edit_warning' => 'Please be careful note that you cannot edit after submitting',
+        'contributions_program_text' => 'One of JCI Damascus goals is to participate in social responsibility, which is achieved in this context through launching open source projects for free. This program aims to provide opportunities for programmers who contribute to projects, to help them gain experience and introduce them to developers from all over the world.',
+        'table_text' => 'Using this feature, you can view the seating options in an event. You can also view other members’ seating reservations assigned for each table. If the table you wish to be seated at has vacant seats, you can make a reservation for a seat at that table and enjoy sitting next to members you share ideas with and enjoy being around!',
+        'menu_description' => 'Using this feature, you can have access to the menu prepared for any event, you can choose meals of your preference, as well as choosing the allocated number (:count) of meals for the event. You will be able to view the menu easily, as it is simple and easy to choose from.',
+        'edit_warning' => 'Please be careful, note that you cannot edit after submitting',
         'needs_approved' => 'Your account has not approved from the admin, if you think this was an error, please contact with the admin or support team',
         'no_active_events' => 'How is that? We know that you have registered and confirmed your account and we promise that we will organize many great events soon and let you know about it',
 
