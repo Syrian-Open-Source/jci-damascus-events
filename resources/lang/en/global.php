@@ -9,9 +9,8 @@ return [
          ',
 
         'available_events_text' => "
-         The first step, you must have an account activated by an JCI damascus administration, on this system and you must be a member within JCI Damascus\n\n
-         This system is dedicated to providing technical solutions to members by facilitating some traditional operations\n\n
-         You can press the following button to log in and we will take you on a tour of the services within the system
+        As a first step, you must create an account on the system. You will receive a confirmation email shortly after creating the account.
+        A system Administrator will approve your request, and you will be able to log into your account. If you already have a verified account, you can log into your account on the System directly.
         ",
 
         'footer' => 'It seems that you have already reached the end of the page,
