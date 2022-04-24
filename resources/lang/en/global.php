@@ -13,10 +13,11 @@ return [
         A system Administrator will approve your request, and you will be able to log into your account. If you already have a verified account, you can log into your account on the System directly.
         ",
 
-        'footer' => 'It seems that you have already reached the end of the page,
-         do not forget to thank the efforts of the volunteers and programmers who contribute to jci projects and syrian open source,
-          yes we do many updates with volunteer efforts, and in order to be able to reach our goals to wider communities and implement more development projects,
-         do not forget to follow us on social media Through the following links',
+        'footer' => 'It seems that you have already reached the end of the page.
+            Don’t forget to pay thanks to the efforts of our volunteers and  programmers who contribute to JCI and the Syrian Open Source platform projects.
+            We work voluntarily on several projects in order to reach our goals in achieving access to broader communities and implementing more development projects in our community.
+            We invite you to follow us on social media through the following links:
+        ',
 
         'contributions_program_text' => 'One of the goals is to participate in social responsibility by launching open source projects for free. This program aims to provide opportunities for programmers who contribute to help build projects, gain experience and get to know developers from all over the world.',
         'menu_text' => 'Through this feature, see the menu prepared for this event, you can choose the meals you like and choose even the allowed number of meals for the night, feel free to see the menu, it\'s simple and easy to choose',
