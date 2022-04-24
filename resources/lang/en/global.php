@@ -3,11 +3,9 @@
 
 return [
     'texts' => [
-        'event_introduction' => 'It is an JCI Damascus events management system.
-         The system displays the available events and then uses your personal information entered by the site administration to enter and interact with the activities related to each event,
-         including food reservations, table reservations and seating.
-         This system was developed by members of the technical team in JCI Damascus , in cooperation with the Syrian Open Source platform
-         You Can Follow the project in github from
+        'event_introduction' => 'This is an Event Management System for JCI Damascus.
+            This system was developed by JCI’s Tech Team in cooperation with the Syrian Open Source platform. You can create an account on the system, which will be activated after the system’s Administration approval, for you to be able to take part in the activities related to JCI Damascus events, including making reservations (food and seats..)
+            You can keep up with the project’s updates on Github through the following link:
          ',
 
         'available_events_text' => "
