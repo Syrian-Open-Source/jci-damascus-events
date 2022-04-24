@@ -22,7 +22,7 @@ return [
         'contributions_program_text' => 'One of JCI Damascus goals is to participate in social responsibility, which is achieved in this context through launching open source projects for free. This program aims to provide opportunities for programmers who contribute to projects, to help them gain experience and introduce them to developers from all over the world.',
         'table_text' => 'Using this feature, you can have access to the menu prepared for any event, you can choose meals of your preference, as well as choosing the allocated number of meals for the event. You will be able to view the menu easily, as it is simple and easy to choose from.',
         'menu_description' => 'Here you can see all the items inside this menu, you can choose up to :count from this menu',
-        'edit_warning' => 'Please be careful note that you cannot edit after submitting',
+        'edit_warning' => 'Please be careful, note that you cannot edit after submitting',
         'needs_approved' => 'Your account has not approved from the admin, if you think this was an error, please contact with the admin or support team',
         'no_active_events' => 'How is that? We know that you have registered and confirmed your account and we promise that we will organize many great events soon and let you know about it',
 
