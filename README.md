@@ -10,6 +10,14 @@ The first local Junior Chamber chapter was founded in 1915, but the internationa
 It encourages young people to become active citizens and to participate in efforts towards social and economic development, and international cooperation, good-will and understanding
 
 ## What is JCI Damascus?
-It is also part of a large organization, consisting of 225 members to approximately 250 members each year, and is located in the city of Damascus.
+It is also part of a large organization, consisting of 225 - 250 members each year, and is located in Syria Damascus.
 It implements many development projects at the professional and societal level, and also has many technical projects
 The technical team in the organization decided to join the open source projects in order to contribute to the community and also to share with the community the way in which they manage the technical projects within the organization
+
+## What is this project?
+The organization organizes several events every quarter of the year,
+and these events must be registered by members within the organization in a certain way,
+so that chairs are reserved at the tables and also choose meals from the menus,
+so the technical team within the organization developed this project to organize 
+the registration process and manage members Registered people,
+as well as issuing reports in order to organize the event more effectively
