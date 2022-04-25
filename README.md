@@ -26,3 +26,17 @@ as well as issuing reports in order to organize the event more effectively
 We have written the required system specifications (SRS) in a professional way. Find the file from [here](config/JCI%20Events%20Projects%20SRS%20v1.3.pdf)
 You may find that the SRS file version differs from the project release,
 we explain all the changes when we make a new release of this project.
+
+
+## technical requirements
+- php version [^7.4]
+- laravel version [^8.4]
+- composer version [^2]
+
+## installation
+- clone this repo
+> git clone git@github.com:syrian-open-source/jci-damascus-events.git
+- Run commands (this should run all dependencies)
+> php artisan jci:install
+
+this project use the laravel backpack for the admin side, and laravel-shift/blueprint to draw the migrations
