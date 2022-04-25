@@ -39,4 +39,6 @@ we explain all the changes when we make a new release of this project.
 - Run commands (this should run all dependencies)
 > php artisan jci:install
 
-this project use the laravel backpack for the admin side, and laravel-shift/blueprint to draw the migrations
+* Note: this project use the laravel backpack for the admin side, and laravel-shift/blueprint to draw the migrations
+
+you can now navigate to http://127.0.0.1:8000 and see the main page
