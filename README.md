@@ -21,3 +21,8 @@ so that chairs are reserved at the tables and also choose meals from the menus,
 so the technical team within the organization developed this project to organize 
 the registration process and manage members Registered people,
 as well as issuing reports in order to organize the event more effectively
+
+## How to understand the requirements?
+We have written the required system specifications (SRS) in a professional way. Find the file from [here](config/JCI%20Events%20Projects%20SRS%20v1.3.pdf)
+You may find that the SRS file version differs from the project release,
+we explain all the changes when we make a new release of this project.
