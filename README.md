@@ -43,6 +43,8 @@ we explain all the changes when we make a new release of this project.
 
 you can now navigate to http://127.0.0.1:8000 and see the main page
 
+# Usage
+All the use case were described in the srs file, but for the programming part we sill summarize the usage and how to deal with this project
 
 # About Syrian Open Source
 The Syrian Open Source platform is the first platform on GitHub dedicated to bringing Syrian developers from different cultures and experiences together,
