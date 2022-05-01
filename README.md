@@ -49,7 +49,7 @@ All the use case were described in the srs file, but for the programming part we
 * client side, we built this side using bootstrap and blade system
 
 ## Admin side
-You can by this panel add event and add tables and menus for this event.
+By this panel You can add an event and add tables and menus for it, and manage the users.
 
 # About Syrian Open Source
 The Syrian Open Source platform is the first platform on GitHub dedicated to bringing Syrian developers from different cultures and experiences together,
