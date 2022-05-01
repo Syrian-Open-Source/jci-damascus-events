@@ -44,7 +44,12 @@ we explain all the changes when we make a new release of this project.
 you can now navigate to http://127.0.0.1:8000 and see the main page
 
 # Usage
-All the use case were described in the srs file, but for the programming part we sill summarize the usage and how to deal with this project
+All the use case were described in the srs file, but for the programming part we sill summarize the usage and how to deal with this project, it contains two sides:
+* admin side, we built this side using backpack admin panel
+* client side, we built this side using bootstrap and blade system
+
+## Admin side
+You can by this panel add event and add tables and menus for this event.
 
 # About Syrian Open Source
 The Syrian Open Source platform is the first platform on GitHub dedicated to bringing Syrian developers from different cultures and experiences together,
