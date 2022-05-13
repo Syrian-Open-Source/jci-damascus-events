@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use SOS\QueryHelper\Facade\QueryHelperFacade;
 
 class ProjectInstall extends Command
 {
@@ -52,4 +53,11 @@ class ProjectInstall extends Command
 
     }
 
+    private function truncateAllTables()
+    {
+        QueryHelperFacade::deleteInstance()
+            ->setAllTablesFromDatabase()
+            ->truncateMultiTables()
+            ->executeWithoutPrepare();
+    }
 }
