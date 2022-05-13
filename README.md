@@ -74,13 +74,15 @@ By this panel You can add an event and add tables and menus for it, and manage t
   - food tables for the created event, each tables must has a char count and the system will create set of chairs that related with this table 
   - menu for this event and you can add also items into this menu
 
+## Client side
 
 
 
 
 
 
-
+# ToDo list: 
+we add all our requirements as issues above.
 
 # About Syrian Open Source
 The Syrian Open Source platform is the first platform on GitHub dedicated to bringing Syrian developers from different cultures and experiences together,
