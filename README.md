@@ -37,6 +37,8 @@ we explain all the changes when we make a new release of this project.
 - clone this repo
 > git clone git@github.com:syrian-open-source/jci-damascus-events.git
 - Run commands (this should run all dependencies)
+> cd ./jci-damascus-events
+> composer install
 > php artisan jci:install
 
 * Note: this project use the laravel backpack for the admin side, and laravel-shift/blueprint to draw the migrations
