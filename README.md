@@ -61,6 +61,7 @@ By this panel You can add an event and add tables and menus for it, and manage t
 
 - Go to http://localhost:8000/admin/login to login to admin panel (<b>notes<b/> that if you want to register a new admin account, you must enable this feature by remove this route part [here](https://github.com/karam-mustafa/jci-damascus-events/blob/main/routes/backpack/custom.php#L11)) but we have already put a default admin from seeder you run jci:install command 
 <img src='public/images/docs/pic2.png' alt='login form'/>
+
 - You can see the main page of admin panel
 
 <img src='public/images/docs/pic3.png' alt='login form'/>
