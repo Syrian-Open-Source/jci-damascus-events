@@ -62,10 +62,14 @@ By this panel You can add an event and add tables and menus for it, and manage t
 - Go to http://localhost:8000/admin/login to login to admin panel (<b>notes<b/> that if you want to register a new admin account, you must enable this feature by remove this route part [here](https://github.com/karam-mustafa/jci-damascus-events/blob/main/routes/backpack/custom.php#L11)) but we have already put a default admin from seeder you run jci:install command 
 <img src='public/images/docs/pic2.png' alt='login form'/>
 - You can see the main page of admin panel
+
 <img src='public/images/docs/pic3.png' alt='login form'/>
+
 - from this panel you can add:
   - Add, update, approve users
-  - Event with details, do not forget to active this event
+  - Event with details, do not forget to active this event (see this [picture](./public/images/docs/pic4.png)), and you can see the registered users with they food and tables selection from two buttons:
+    -  Show Registrations Statistics: navigate to another page that make you able to see each table and the registered users on it 
+    -  Export Registrations Statistics: export excel file that contains each table and its users with food selection
   - food tables for the created event, each tables must has a char count and the system will create set of chairs that related with this table 
   - menu for this event and you can add also items into this menu
 
