@@ -35,15 +35,21 @@ we explain all the changes when we make a new release of this project.
 
 ## installation
 - clone this repo
-> git clone git@github.com:syrian-open-source/jci-damascus-events.git
+> - git clone git@github.com:syrian-open-source/jci-damascus-events.git
+>
 - Run commands (this should run all dependencies)
-> cd ./jci-damascus-events
-> composer install
-> php artisan jci:install
+> - cd ./jci-damascus-events
+>
+> - composer install
+>
+> - php artisan jci:install
 
 * Note: this project use the laravel backpack for the admin side, and laravel-shift/blueprint to draw the migrations
 
-you can now navigate to http://127.0.0.1:8000 and see the main page
+you can now navigate to http://127.0.0.1:8000 and see the main page, this what the main page looks like
+
+<img src='public/images/docs/pic1.png' alt='main page'/>
+
 
 # Usage
 All the use case were described in the srs file, but for the programming part we sill summarize the usage and how to deal with this project, it contains two sides:
