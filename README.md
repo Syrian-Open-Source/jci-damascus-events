@@ -37,12 +37,21 @@ we explain all the changes when we make a new release of this project.
 - clone this repo
 > git clone git@github.com:syrian-open-source/jci-damascus-events.git
 - Run commands (this should run all dependencies)
+> cd ./jci-damascus-events
+> composer install
 > php artisan jci:install
 
 * Note: this project use the laravel backpack for the admin side, and laravel-shift/blueprint to draw the migrations
 
 you can now navigate to http://127.0.0.1:8000 and see the main page
 
+# Usage
+All the use case were described in the srs file, but for the programming part we sill summarize the usage and how to deal with this project, it contains two sides:
+* admin side, we built this side using backpack admin panel
+* client side, we built this side using bootstrap and blade system
+
+## Admin side
+By this panel You can add an event and add tables and menus for it, and manage the users.
 
 # About Syrian Open Source
 The Syrian Open Source platform is the first platform on GitHub dedicated to bringing Syrian developers from different cultures and experiences together,
