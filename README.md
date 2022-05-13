@@ -48,7 +48,7 @@ you can now navigate to http://127.0.0.1:8000 and see the main page
 # Usage
 All the use case were described in the srs file, but for the programming part we sill summarize the usage and how to deal with this project, it contains two sides:
 * admin side, we built this side using backpack admin panel
-* client side, we built this side using bootstrap and blade system
+* client side, we built this side using bootstrap and blade engine
 
 ## Admin side
 By this panel You can add an event and add tables and menus for it, and manage the users.
