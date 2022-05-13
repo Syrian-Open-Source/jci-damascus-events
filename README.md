@@ -139,9 +139,8 @@ All the use case were described in the srs file, but for the programming part we
 ## Admin side
 By this panel You can add an event and add tables and menus for it, and manage the users.
 
-- Go to http://localhost:8000/admin/login to login to admin panel    
-<img src='public/images/docs/pic1.png' alt='main page'/>
- notes that if you want to register a new admin account, you must enable this feature by remove this route part [here](https://github.com/karam-mustafa/jci-damascus-events/blob/main/routes/backpack/custom.php#L11)
+- Go to http://localhost:8000/admin/login to login to admin panel (<b>notes<b/> that if you want to register a new admin account, you must enable this feature by remove this route part [here](https://github.com/karam-mustafa/jci-damascus-events/blob/main/routes/backpack/custom.php#L11))    
+<img src='public/images/docs/pic2.png' alt='main page'/>
 
 
 
