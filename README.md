@@ -85,6 +85,14 @@ By this panel You can add an event and add tables and menus for it, and manage t
 
 <img src='public/images/docs/pic6.png' alt='events page'/>
 
+- first section makes you able to see the exists tables and choose any table to receive a chai on this table
+
+<img src='public/images/docs/pic7.png' alt='events page'/>
+
+- second section is for seeing the menu and choose the food from it.
+
+<img src='public/images/docs/pic8.png' alt='events page'/>
+
 
 # ToDo list: 
 We add all our requirements as issues above.
