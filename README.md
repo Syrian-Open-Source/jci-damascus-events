@@ -83,6 +83,8 @@ By this panel You can add an event and add tables and menus for it, and manage t
 
 - After you click on see details link, you must be navigated to another page and see how you can register on tables and food
 
+<img src='public/images/docs/pic6.png' alt='events page'/>
+
 
 # ToDo list: 
 We add all our requirements as issues above.
