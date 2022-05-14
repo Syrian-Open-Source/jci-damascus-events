@@ -64,7 +64,7 @@ By this panel You can add an event and add tables and menus for it, and manage t
 
 - You can see the main page of admin panel
 
-<img src='public/images/docs/pic3.png' alt='login form'/>
+<img src='public/images/docs/pic3.png' alt='panel'/>
 
 - from this panel you can add:
   - Add, update, approve users
@@ -76,10 +76,12 @@ By this panel You can add an event and add tables and menus for it, and manage t
 
 ## Client side
 - first step is register a new client account from this link http://localhost:8000/register
-- you must receive verification link to verify your account, and do not forget to update mail info from .env file
+- you must receive verification link to verify your account (we use breeze package for authentication process), and do not forget to update mail info from .env file
 - after verifying your email, you must be able to see the active events, see the below picture
 
+<img src='public/images/docs/pic5.png' alt='events page'/>
 
+- After you click on see details link, you must be navigated to another page and see how you can register on tables and food
 
 
 # ToDo list: 
