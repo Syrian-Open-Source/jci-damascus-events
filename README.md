@@ -35,23 +35,71 @@ we explain all the changes when we make a new release of this project.
 
 ## installation
 - clone this repo
-> git clone git@github.com:syrian-open-source/jci-damascus-events.git
+> - git clone git@github.com:syrian-open-source/jci-damascus-events.git
+>
 - Run commands (this should run all dependencies)
-> cd ./jci-damascus-events
-> composer install
-> php artisan jci:install
+> - cd ./jci-damascus-events
+>
+> - composer install
+>
+> - php artisan jci:install
 
 * Note: this project use the laravel backpack for the admin side, and laravel-shift/blueprint to draw the migrations
 
-you can now navigate to http://127.0.0.1:8000 and see the main page
+you can now navigate to http://127.0.0.1:8000 and see the main page, this what the main page looks like
+
+<img src='public/images/docs/pic1.png' alt='main page'/>
+
 
 # Usage
 All the use case were described in the srs file, but for the programming part we sill summarize the usage and how to deal with this project, it contains two sides:
 * admin side, we built this side using backpack admin panel
-* client side, we built this side using bootstrap and blade system
+* client side, we built this side using bootstrap and blade engine
 
 ## Admin side
 By this panel You can add an event and add tables and menus for it, and manage the users.
+
+- Go to http://localhost:8000/admin/login to login to admin panel (<b>notes<b/> that if you want to register a new admin account, you must enable this feature by remove this route part [here](https://github.com/karam-mustafa/jci-damascus-events/blob/main/routes/backpack/custom.php#L11)) but we have already put a default admin from seeder you run jci:install command 
+<img src='public/images/docs/pic2.png' alt='login form'/>
+
+- You can see the main page of admin panel
+
+<img src='public/images/docs/pic3.png' alt='panel'/>
+
+- from this panel you can add:
+  - Add, update, approve users
+  - Event with details, do not forget to active this event (see this [picture](./public/images/docs/pic4.png)), and you can see the registered users with they food and tables selection from two buttons:
+    -  Show Registrations Statistics: navigate to another page that make you able to see each table and the registered users on it 
+    -  Export Registrations Statistics: export excel file that contains each table and its users with food selection
+  - food tables for the created event, each tables must has a char count and the system will create set of chairs that related with this table 
+  - menu for this event and you can add also items into this menu
+
+## Client side
+- first step is register a new client account from this link http://localhost:8000/register
+- you must receive verification link to verify your account (we use breeze package for authentication process), and do not forget to update mail info from .env file
+- after verifying your email, you must be able to see the active events, see the below picture
+
+<img src='public/images/docs/pic5.png' alt='events page'/>
+
+- After you click on see details link, you must be navigated to another page and see how you can register on tables and food
+
+<img src='public/images/docs/pic6.png' alt='events page'/>
+
+- first section makes you able to see the exists tables and choose any table to receive a chai on this table
+
+<img src='public/images/docs/pic7.png' alt='events page'/>
+
+- second section is for seeing the menu and choose the food from it.
+
+<img src='public/images/docs/pic8.png' alt='events page'/>
+
+
+:warning: Remember :warning: we described all the features in [SRS](config/JCI%20Events%20Projects%20SRS%20v1.3.pdf) file
+
+----------------
+
+# ToDo list: 
+We add all our requirements as issues above.
 
 # About Syrian Open Source
 The Syrian Open Source platform is the first platform on GitHub dedicated to bringing Syrian developers from different cultures and experiences together,
