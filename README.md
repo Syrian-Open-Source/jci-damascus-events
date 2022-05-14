@@ -98,14 +98,14 @@ By this panel You can add an event and add tables and menus for it, and manage t
 
 ----------------
 
-# ToDo list: 
+# ToDo list
 We add all our requirements as issues above.
 
-# Credit: 
-[karam mustafa - JCI IT Director](https://www.linkedin.com/in/karam2mustafa/)
-[Yahia bajbouj - JCI IT Member](https://www.linkedin.com/in/yahia-bajbouj-6417ba1b5/)
-[Yaseen Kaskin - JCI IT Member](https://www.linkedin.com/in/yaseen-kaskin/)
-[All contributions](https://github.com/Syrian-Open-Source/jci-damascus-events/graphs/contributors)
+# Credit
+- [karam mustafa - JCI IT Director](https://www.linkedin.com/in/karam2mustafa/)
+- [Yahia bajbouj - JCI IT Member](https://www.linkedin.com/in/yahia-bajbouj-6417ba1b5/)
+- [Yaseen Kaskin - JCI IT Member](https://www.linkedin.com/in/yaseen-kaskin/)
+- [All contributions](https://github.com/Syrian-Open-Source/jci-damascus-events/graphs/contributors)
 
 # About Syrian Open Source
 The Syrian Open Source platform is the first platform on GitHub dedicated to bringing Syrian developers from different cultures and experiences together,
