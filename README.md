@@ -93,7 +93,8 @@ By this panel You can add an event and add tables and menus for it, and manage t
 
 <img src='public/images/docs/pic8.png' alt='events page'/>
 
-<b font=red>Remember<b/> we described all the features in [SRS](config/JCI%20Events%20Projects%20SRS%20v1.3.pdf)) file
+
+:warning: Remember :warning: we described all the features in [SRS](config/JCI%20Events%20Projects%20SRS%20v1.3.pdf) file
 
 ----------------
 
